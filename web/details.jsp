@@ -310,61 +310,7 @@
                 <button class="accordion" style="top:410px;position: absolute;"  id="bt7">Make Regular Subject Schema </button>
                 <div class="panel">
                     <div id="one">
-                        <!--  <form action="subjectAlloc.jsp" action="GET">
-                              <table style="border-style:solid;" >
-                                  <tr>
-                                      <th width="50%">Select Course</th>
-                                      <td><select name="course" required="">
-                                              <option value="" selected disabled>Course</option>
-                                              <option value="BE">BE</option>
-                                              <option value="ME">ME</option>
-                                              <option value="ME">MSC</option>
-                                          </select>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <th>Select Branch</th>
-                                      <td> 
-                                          <select name="branch" required="">
-                                              <option value="" selected disabled>Select Branch</option>
-                                              <option value="Computer Engineering">Computer Engineering</option>
-                                              <option value="Electronics And Telecommunication Engineering">Electronics And Telecommunication Engineering</option>
-                                              <option value="Information Technology">Information Technology</option>
-                                              <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                              <option value="Civil Engineering">Civil Engineering</option>
-                                              <option value="Electronics And Instrumentation Engineering">Electronics And Instrumentation Engineering</option>
-                                          </select>
-                                      </td>
-                                  </tr>
-                                  <tr>
-                                      <th>Select Semester</th>
-                                      <td><select  name="sem" required="">
-                                              <option value="" selected disabled >Select sem</option>
-                                              <option value="1">1Sem</option>
-                                              <option value="2">2Sem</option>
-                                              <option value="3">3Sem</option>
-                                              <option value="4">4Sem</option>
-                                              <option value="5">5Sem</option>   
-                                              <option value="6">6Sem</option>
-                                              <option value="7">7Sem</option>
-                                              <option value="8">8Sem</option>
-  
-                                          </select></td>
-                                  </tr>
-                                  <tr>
-                                      <th>Select Course Type</th>
-                                      <td><select  name="ctype" required="">
-                                              <option value="" selected disabled>Select Course Type</option>
-                                              <option value="P">PT</option>
-                                              <option value="F">FT</option>
-                                          </select></td>
-                                  </tr>
-                                  <tr>
-                                      <td colspan="2" align="center">  <input type="hidden" value="0" name="i">
-                                          <input type="submit" value="SUBMIT" class="button" required=""></td>
-                                  </tr>
-                              </table><br>
-                        </form> -->
+                        
                         <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                             <form class="sign-up" action="subjectAlloc.jsp" >
                                 <div class="row">
