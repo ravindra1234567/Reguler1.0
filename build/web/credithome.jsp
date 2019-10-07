@@ -86,13 +86,13 @@
         }
     </script>
     <body>
+        <jsp:include page="header.html" />
 
 
-
-        <div class="container-fluid header">
+      <!--  <div class="container-fluid header">
             <div class="row " >
 
-                <div class="offset-1 col-2">
+               <div class="offset-1 col-2">
                     <img src="input\logo.png" alt="Davv Logo" class="img-fluid logo-image">
                 </div>
                 <div class="col-8  text-white">
@@ -107,14 +107,14 @@
 
 
 
-            </div>
+            </div> 
             <h3 style="text-align:left;">
                 <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
             </h3>            
 
 
 
-        </div>
+        </div>-->
         <%
 
             ServletContext context = getServletContext();
@@ -198,5 +198,6 @@
                 });
             });
         </script>
+        <jsp:include page="footer.html" />
     </body>
 </html>
