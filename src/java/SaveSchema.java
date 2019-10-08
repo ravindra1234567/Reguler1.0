@@ -1,3 +1,5 @@
+
+  
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -52,7 +54,7 @@ public class SaveSchema extends HttpServlet {
         sem = Integer.parseInt(request.getParameter("sem"));
 //                  out.println(year);
         course = request.getParameter("course");
-        ctype = request.getParameter("ctype");
+        ctype = "F";//request.getParameter("ctype");
 
         try (PrintWriter out = response.getWriter()) {
             try {
@@ -98,7 +100,7 @@ public class SaveSchema extends HttpServlet {
                     }
                 }
             }
-             response.sendRedirect("subjectAlloc.jsp?course=" + course  + "&branch=" + branch+"&sem="+sem+"&ctype="+ctype);
+             response.sendRedirect("subjectAlloc.jsp");
         }
        
     }

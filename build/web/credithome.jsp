@@ -87,34 +87,8 @@
     </script>
     <body>
         <jsp:include page="header.html" />
+        <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
 
-
-      <!--  <div class="container-fluid header">
-            <div class="row " >
-
-               <div class="offset-1 col-2">
-                    <img src="input\logo.png" alt="Davv Logo" class="img-fluid logo-image">
-                </div>
-                <div class="col-8  text-white">
-                    <div class="h2 college-name ">Institute of Engineering And Technology</div>
-                    <div class="row">
-                        <div class="offset-6 col-3 ">Marks Entry System</div>
-                    </div>
-                </div>
-
-
-
-
-
-
-            </div> 
-            <h3 style="text-align:left;">
-                <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
-            </h3>            
-
-
-
-        </div>-->
         <%
 
             ServletContext context = getServletContext();

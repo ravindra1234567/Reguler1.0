@@ -71,10 +71,10 @@
             input{
                 font-size: 18px;
             }
-/*            select{
-                font-size: 18px;
-                width: 70%;
-            }*/
+            /*            select{
+                            font-size: 18px;
+                            width: 70%;
+                        }*/
             .semStyle{
                 font-style: century-gothis;
                 font-size:30px;
@@ -310,7 +310,7 @@
                 <button class="accordion" style="top:410px;position: absolute;"  id="bt7">Make Regular Subject Schema </button>
                 <div class="panel">
                     <div id="one">
-                        
+
                         <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                             <form class="sign-up" action="subjectAlloc.jsp" >
                                 <div class="row">
@@ -355,7 +355,7 @@
                     </div>
                 </div>
 
-                <button class="accordion" style="top:510px;position: absolute;"  id="bt7">Eligible Student</button>
+                <button class="accordion" style="top:510px;position: absolute;"  id="bt7">Registered Student</button>
                 <!--<button class="accordion" style="position:absolute;" id="bt1">Student List ( For Deletion )</button>-->
                 <div class="panel" style="position: absolute;margin-top: 5%;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
@@ -363,7 +363,7 @@
                             <div class="row">
                                 <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
 
-                                    Eligible Student
+                                    Registered Student
                                 </div>
                             </div>
                             <jsp:include page="search_form.jsp" /> 
@@ -375,14 +375,14 @@
                         </form>
                     </div>
                 </div>
-                <button class="accordion" style="top:560px;position: absolute;"  id="bt8">Not Eligible Student</button>
+                <button class="accordion" style="top:560px;position: absolute;"  id="bt8">Not Registered Student</button>
                 <div class="panel" style="position: absolute;margin-top: 5%;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" action="not_eligible_student.jsp" method="post" >
                             <div class="row">
                                 <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
 
-                                    Not Eligible Student
+                                    Not Registered Student
                                 </div>
                             </div>
                             <jsp:include page="search_form.jsp" /> 
@@ -421,238 +421,225 @@
                 </div>
                 <button class="accordion" style="top:660px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
 
-                
 
-               
+
+
                 <button class="accordion" style="top:710px;position: absolute;"  id="bt8">Grant Special permission</button>
-<div class="panel">
-        <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-            <form class="sign-up" action="special_permission.jsp" method="post">
-                                <div class="row">
-                                    <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-                                      Grant Special Permission 
-                                    </div>
+                <div class="panel">
+                    <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
+                        <form class="sign-up" action="special_permission.jsp" method="post">
+                            <div class="row">
+                                <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
+                                    Grant Special Permission 
                                 </div>
-                                                                        <div class="ml-2 mr-2 row">
-						<div class="col-lg-6 p-1">
-						<label for="student-class"><small>Select Course<sup class="text-danger">*</sup></small></label>
-                                                <input type="text" name="eno" class="form-control" placeholder="Enter Enrollment No." required/>
-					</div>
-						<div class="col-lg-6 p-1">
-							<label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
-								<select name="status" required class="form-control st1 " >
-                                                                        <option value="" selected disabled  >Select Status</option>
-                                                                        <option value="Regular" >Regular</option>
-                                                                        <option value="Ex" >Ex</option>
-                                                                </select>
-                                                </div>
-                                        <div class="col-lg-6 p-1">
-						<label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
-						<select id="student-medium" name="sem" class="form-control">
-                                                         <option value="" selected disabled>Select Semester</option>
-							 <option value="1">1Sem</option>
-                                                         <option value="2">2Sem</option>
-                                                         <option value="3">3Sem</option>
-                                                         <option value="4">4Sem</option>
-                                                        <option value="5">5Sem</option>
-                                                        <option value="6">6Sem</option>
-                                                        <option value="7">7Sem</option> 
-                                                        <option value="8">8Sem</option>
-						</select>
-					</div>
-                                    </div>
-				<div class="col-lg-12">
-					<label class="checkbox-inline small">
-						<input class="test-result-date" type="checkbox" required>
-						I accept the terms and conditions.
-					</label>
-				</div>
-				
-                                <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-                                    <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
+                            </div>
+                            <div class="ml-2 mr-2 row">
+                                <div class="col-lg-6 p-1">
+                                    <label for="student-class"><small>Enter Enrollment No.<sup class="text-danger">*</sup></small></label>
+                                    <input type="text" name="eno" class="form-control" placeholder="Enter Enrollment No." required/>
                                 </div>
-                            </form>
-                        </div>
-        </div>
- </div>
+                                <div class="col-lg-6 p-1">
+                                    <label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
+                                    <select name="status" required class="form-control st1 " >
+                                        <option value="" selected disabled  >Select Status</option>
+                                        <option value="Regular" >Regular</option>
+                                        <option value="Ex" >Ex</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6 p-1">
+                                    <label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
+                                    <select id="student-medium" name="sem" class="form-control">
+                                        <option value="" selected disabled>Select Semester</option>
+                                        <option value="1">1Sem</option>
+                                        <option value="2">2Sem</option>
+                                        <option value="3">3Sem</option>
+                                        <option value="4">4Sem</option>
+                                        <option value="5">5Sem</option>
+                                        <option value="6">6Sem</option>
+                                        <option value="7">7Sem</option> 
+                                        <option value="8">8Sem</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <label class="checkbox-inline small">
+                                    <input class="test-result-date" type="checkbox" required>
+                                    I accept the terms and conditions.
+                                </label>
+                            </div>
 
-                  
-     
-                
-                
-                <button class="accordion" style="position:absolute;top:760px;"  id="bt11">Manual Unpaid to Paid</button>
-                <div class="panel" style="position: absolute;margin-top: 5%;">
-                 <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                            <form class="sign-up" action="paid.jsp">
-                                <div class="row">
-                                    <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-                                       Manual Unpaid To Paid
-                                    </div>
-                                </div>
-                                                                        <div class="ml-2 mr-2 row">
-						<div class="col-lg-6 p-1">
-						<label for="student-class"><small>Select Course<sup class="text-danger">*</sup></small></label>
-                                                <input type="text" name="eno" class="form-control" placeholder="Enter Enrollment No." required/>
-					</div>
-						<div class="col-lg-6 p-1">
-							<label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
-								<select name="status" required class="form-control st1 " >
-                                                                        <option value="" selected disabled  >Select Status</option>
-                                                                        <option value="Regular" >Regular</option>
-                                                                        <option value="Ex" >Ex</option>
-                                                                </select>
-                                                </div>
-                                        <div class="col-lg-6 p-1">
-						<label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
-						<select id="student-medium" name="sem" class="form-control">
-                                                         <option value="" selected disabled>Select Semester</option>
-							 <option value="1">1Sem</option>
-                                                         <option value="2">2Sem</option>
-                                                         <option value="3">3Sem</option>
-                                                         <option value="4">4Sem</option>
-                                                        <option value="5">5Sem</option>
-                                                        <option value="6">6Sem</option>
-                                                        <option value="7">7Sem</option> 
-                                                        <option value="8">8Sem</option>
-						</select>
-					</div>
-                                    </div>
-				<div class="col-lg-12">
-					<label class="checkbox-inline small">
-						<input class="test-result-date" type="checkbox" required>
-						I accept the terms and conditions.
-					</label>
-				</div>
-				
-                                <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-                                    <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    
-            
+                            <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
+                                <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-               
-                <button class="accordion" style="position:absolute;top:810px;" id="bt12">Payment Status</button>
-                <div class="panel" style="position: absolute;margin-top: 5%;">
-                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                            <form class="sign-up" action="reg_not_reg_ex.jsp">
-                                <div class="row">
-                                    <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-                                       Payment Status
-                                    </div>
-                                </div>
-                                                                        <div class="ml-2 mr-2 row">
-						<div class="col-lg-6 p-1">
-						<label for="student-class"><small>Select Course<sup class="text-danger">*</sup></small></label>
-						<select id="student-class" name="course" class="form-control">
-							 <option value="" selected disabled >Select Course</option>
-                                                         <option value="BF">BE(FT)</option>
-                                                         <option value="BP">BE(PT)</option>
-                                                        <option value="MF">ME(FT)</option>
-                                                        <option value="MP">ME(PT)</option>
-                                                        <option value="MSF">MSC(FT)</option>
-                                                        <option value="MSP">MSC(PT)</option>
-						</select>
-					</div>
-						<div class="col-lg-6 p-1">
-							<label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
-								<select name="status" required class="form-control st1 " >
-                                                                        <option value="" selected disabled  >Select Status</option>
-                                                                        <option value="Regular" >Regular</option>
-                                                                        <option value="Ex" >Ex</option>
-                                                                </select>
-                                                </div>
-					<div class="col-lg-6 p-1">
-						<label><small>Select Branch<sup class="text-danger">*</sup></small></label>
-                                                <select   name="branch" class="blank_branch branch form-control">
-                                                        <option value="" selected disabled>Select Branch</option>
-                                 
-                                                </select>
-                                                <select  name="branch" class="branch_ME branch form-control" style="display:none">
-                                                        <option value="" selected disabled>Select Branch</option>
-                                                         <option value="Software Engineering">Software Engineering</option>
-                                                         <option value="Information Security">Information Security</option>
-                                                         <option value="Design And Thermal">Design And Thermal</option>
-                                                         <option value="Digital Communication">Digital Communication</option>
-                                                         <option value="Industrial Engineering And Management">Industrial Engineering And Management</option>
-                                                         <option value="Digital Instrumentation">Digital Instrumentation</option>
-                                                </select>
-						<select  name="branch" class="branch_BE branch form-control" style="display:none">
-                                                    <option value="" selected disabled>Select Branch</option>
-                                                    <option value="Computer Engineering">Computer Engineering</option>
-                                                    <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
-                                                    <option value="Information Technology">Information Technology</option>
-                                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                                    <option value="Civil Engineering">Civil Engineering</option>
-                                                    <option value="Electronics & Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
-                                                </select>
-                                                <select  name="branch" class="branch_MS branch form-control" style="display:none">
-                                                    <option value="" selected disabled>Select Branch</option>
-                                                    <option value="Applied Mathematics">Applied Mathematics</option>
-                                                    
-                                                </select>
-					</div>
-                                        <div class="col-lg-6 p-1">
-						<label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
-						<select id="student-medium" name="sem" class="form-control">
-                                                         <option value="" selected disabled>Select Semester</option>
-							 <option value="1">1Sem</option>
-                                                         <option value="2">2Sem</option>
-                                                         <option value="3">3Sem</option>
-                                                         <option value="4">4Sem</option>
-                                                        <option value="5">5Sem</option>
-                                                        <option value="6">6Sem</option>
-                                                        <option value="7">7Sem</option> 
-                                                        <option value="8">8Sem</option>
-						</select>
-					</div>
-                                    </div>
-                                        <div class="row">
-                                        <div class="col-lg-6 p-2">
-						<label for="reg"><small>Registered/Not-Registered<sup class="text-danger">*</sup></small></label>
-						<select id="reg" name="reg" class="form-control">
-                                                    <option value="" selected disabled>Select Status</option>
-                                                         <option value="Paid">Registered</option>
-                                                         <option value="Unpaid">Not Registered</option>
-                                                        <option value="Both">Both</option>
-						</select>
-					</div>         
-                                        </div>
-				
-				<div class="col-lg-12">
-					<label class="checkbox-inline small">
-						<input class="test-result-date" type="checkbox" required>
-						I accept the terms and conditions.
-					</label>
-				</div>
-				
-                                <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-                                    <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    
-
-
-                </div>
-
-
-                <button class="accordion" style="top:860px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
-                <button class="accordion" style="top:910px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
-                <button class="accordion" style="top:960px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
             </div>
-        
+
+
+
+
+
+            <button class="accordion" style="position:absolute;top:760px;"  id="bt11">Manual Unpaid to Paid</button>
+            <div class="panel" style="position: absolute;margin-top: 5%;">
+                <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
+                    <form class="sign-up" action="paid.jsp">
+                        <div class="row">
+                            <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
+                                Manual Unpaid To Paid
+                            </div>
+                        </div>
+                        <div class="ml-2 mr-2 row">
+                            <div class="col-lg-6 p-1">
+                                <label for="student-class"><small>Enter Enrollment No.<sup class="text-danger">*</sup></small></label>
+                                <input type="text" name="eno" class="form-control" placeholder="Enter Enrollment No." required/>
+                            </div>
+                            <div class="col-lg-6 p-1">
+                                <label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
+                                <select name="status" required class="form-control st1 " >
+                                    <option value="" selected disabled  >Select Status</option>
+                                    <option value="Regular" >Regular</option>
+                                    <option value="Ex" >Ex</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 p-1">
+                                <label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
+                                <select id="student-medium" name="sem" class="form-control">
+                                    <option value="" selected disabled>Select Semester</option>
+                                    <option value="1">1Sem</option>
+                                    <option value="2">2Sem</option>
+                                    <option value="3">3Sem</option>
+                                    <option value="4">4Sem</option>
+                                    <option value="5">5Sem</option>
+                                    <option value="6">6Sem</option>
+                                    <option value="7">7Sem</option> 
+                                    <option value="8">8Sem</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label class="checkbox-inline small">
+                                <input class="test-result-date" type="checkbox" required>
+                                I accept the terms and conditions.
+                            </label>
+                        </div>
+
+                        <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
+                            <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button class="accordion" style="position:absolute;top:810px;" id="bt12">Payment Status</button>
+            <div class="panel" style="position: absolute;margin-top: 5%;">
+                <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
+                    <form class="sign-up" action="reg_not_reg_ex.jsp">
+                        <div class="row">
+                            <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
+                                Payment Status
+                            </div>
+                        </div>
+                        <div class="ml-2 mr-2 row">
+                            <div class="col-lg-6 p-1">
+                                <label for="student-class"><small>Select Course<sup class="text-danger">*</sup></small></label>
+                                <select id="student-class" name="course" class="form-control">
+                                    <option value="" selected disabled >Select Course</option>
+                                    <option value="BF">BE(FT)</option>
+                                    <option value="BP">BE(PT)</option>
+                                    <option value="MF">ME(FT)</option>
+                                    <option value="MP">ME(PT)</option>
+                                    <option value="MSF">MSC(FT)</option>
+                                    <option value="MSP">MSC(PT)</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 p-1">
+                                <label for="status"><small>Status<sup class="text-danger">*</sup></small></label>
+                                <select name="status" required class="form-control st1 " >
+                                    <option value="" selected disabled  >Select Status</option>
+                                    <option value="Regular" >Regular</option>
+                                    <option value="Ex" >Ex</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 p-1">
+                                <label><small>Select Branch<sup class="text-danger">*</sup></small></label>
+                                <select   name="branch" class="blank_branch branch form-control">
+                                    <option value="" selected disabled>Select Branch</option>
+
+                                </select>
+                                <select  name="branch" class="branch_ME branch form-control" style="display:none">
+                                    <option value="" selected disabled>Select Branch</option>
+                                    <option value="Software Engineering">Software Engineering</option>
+                                    <option value="Information Security">Information Security</option>
+                                    <option value="Design And Thermal">Design And Thermal</option>
+                                    <option value="Digital Communication">Digital Communication</option>
+                                    <option value="Industrial Engineering And Management">Industrial Engineering And Management</option>
+                                    <option value="Digital Instrumentation">Digital Instrumentation</option>
+                                </select>
+                                <select  name="branch" class="branch_BE branch form-control" style="display:none">
+                                    <option value="" selected disabled>Select Branch</option>
+                                    <option value="Computer Engineering">Computer Engineering</option>
+                                    <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                    <option value="Civil Engineering">Civil Engineering</option>
+                                    <option value="Electronics & Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
+                                </select>
+                                <select  name="branch" class="branch_MS branch form-control" style="display:none">
+                                    <option value="" selected disabled>Select Branch</option>
+                                    <option value="Applied Mathematics">Applied Mathematics</option>
+
+                                </select>
+                            </div>
+                            <div class="col-lg-6 p-1">
+                                <label for="student-medium"><small>Select Semester<sup class="text-danger">*</sup></small></label>
+                                <select id="student-medium" name="sem" class="form-control">
+                                    <option value="" selected disabled>Select Semester</option>
+                                    <option value="1">1Sem</option>
+                                    <option value="2">2Sem</option>
+                                    <option value="3">3Sem</option>
+                                    <option value="4">4Sem</option>
+                                    <option value="5">5Sem</option>
+                                    <option value="6">6Sem</option>
+                                    <option value="7">7Sem</option> 
+                                    <option value="8">8Sem</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 p-2">
+                                <label for="reg"><small>Registered/Not-Registered<sup class="text-danger">*</sup></small></label>
+                                <select id="reg" name="reg" class="form-control">
+                                    <option value="" selected disabled>Select Status</option>
+                                    <option value="Paid">Registered</option>
+                                    <option value="Unpaid">Not Registered</option>
+                                    <option value="Both">Both</option>
+                                </select>
+                            </div>         
+                        </div>
+
+                        <div class="col-lg-12">
+                            <label class="checkbox-inline small">
+                                <input class="test-result-date" type="checkbox" required>
+                                I accept the terms and conditions.
+                            </label>
+                        </div>
+
+                        <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
+                            <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+            </div>
+
+
+            <button class="accordion" style="top:860px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
+            <button class="accordion" style="top:910px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
+            <button class="accordion" style="top:960px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
+        </div>
+
         <script>
             var acc = document.getElementsByClassName("accordion");
             var i;
@@ -706,21 +693,7 @@
             <jsp:include page="footer.html" />
         </div>
     </body>
-    
-    <%--<jsp:include page="footer.html" />--%>
-<!--    <footer style="position: relative;top:900px;">
-        <p align="center" id="p1">
-            Exam Registration Portal
-        </p>
-        <hr align="center" width="60%">
-        <p align="center" id="p2">
-            Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
 
-            For any queries contact ravindrakushwahanwg@gmail.com.
-            Copyright © 2019 IET DAVV. All right reserved.
-        </p>
-
-    </footer>-->
 </html>
 
 

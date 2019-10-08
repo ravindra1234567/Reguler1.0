@@ -1,77 +1,45 @@
 <%-- 
-    Document   : facultyAlloc
-    Created on : Dec 25, 2017, 1:19:56 PM
+    Document   : subjectAlloc.jsp
+    Created on : 8 Oct, 2019, 6:06:17 AM
     Author     : Ravindra
 --%>
 
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
 
+    String sem = request.getParameter("sem");
+    String branch = request.getParameter("branch");
+    String course = request.getParameter("course");
+    String status = request.getParameter("status");
+    
+                 String str = course;
+                course = str.substring(0, 1);
+               String coursetype = str.substring(1, 2);
 
-
-<!DOCTYPE html>
-<html> 
-    <head>
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="css/sol.css">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <div class="container-fluid header">
-            <div class="row " >
-
-                <div class="offset-1 col-2">
-                    <a href="index.jsp"><img src="input/logo.png" alt="Davv Logo" class="img-fluid logo-image"></a>
-                </div>
-                <div class="col-8 text-uppercase text-white">
-                    <div class="h2 college-name text-capitalize">Institute Of Engineering And Technology</div>
-                    <div class="row">
-                        <div class="offset-6 col-3 ">Subject Entry System</div>
-                    </div>
-                </div>
-                <h3 style="text-align:right;">
-                    <span style="float:right;"><a href="logout">Logout</a></span>
-                </h3>
-            </div>
-
-
-        </div>
-        <div >
-            <!--            <hr>
-                        Welcome  as Admin-->
-            <%
-//            String s=(String)session.getAttribute("valid");
-//         if(s==null)
-//             response.sendRedirect("panel.jsp");
-//         else if(s.equals("0"))
-//            {
-//                response.sendRedirect("panel.jsp");
-//            }
+                if (str.equals("MSF")) {
+                    course = "MSC";
+                    coursetype = "F";
+                } else if (str.equals("MSP")) {
+                    course = "MSC";
+                    coursetype = "P";
+                } else {
+                    if (course.equals("B")) {
+                        course = "BE";
+                    } else {
+                        course = "ME";
+                    }
+                }
+                out.println("branch ="+branch);
+                out.println("<br> sem = "+ sem);
+                out.println("<br> course ="+course);
+                out.println("<br> coursetype = "+coursetype);
                 
-                //String class_full_name = request.getParameter("class_full_name");
-                
-                
-               
-                
-                /*
-                session.setAttribute("class_id", class_id);
-                session.setAttribute("class_full_name", class_full_name);
-                session.setAttribute("course", course);
-                */
-               // int sem = Integer.parseInt((String) session.getAttribute("sem"));
-                 String  branch = request.getParameter("branch");
-                 int sem = Integer.parseInt(request.getParameter("sem"));
-//                  out.println(year);
-                String course = request.getParameter("course");
-                String ctype = request.getParameter("ctype");
                 Class.forName(pageContext.getServletContext().getInitParameter("Driver"));
                 Connection con = DriverManager.getConnection(pageContext.getServletContext().getInitParameter("Url"), pageContext.getServletContext().getInitParameter("UserName"), pageContext.getServletContext().getInitParameter("Password"));
 
@@ -87,83 +55,83 @@
                 }
 
                 session.setAttribute("subcode_list", subjectList);
-            %>
-            <hr>
-            <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+    
+    
+    
+%>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <jsp:include page="bootstrap_file.jsp" />
+    </head>
+    <body>
+        <jsp:include page="header.html" />
+        <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
             <div class="row">
-                <div class="col-12 text-capitalize h4 text-info" >
-                    <h1 align="center"> Subject Allocation</h1>
+                <div class="col-12 text-capitalize h1 text-info" >
+                    <div align="center"> Subject Allocation</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="offset-4 col-4">
-                    <!--<h1 align="center">  <a class="btn btn-info" href="schema.jsp?sem=<%=sem%>" >View All Class</a></h1>-->
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-12">
-                </div>
-            </div>
-            <div class="row text-left">
+        <div class="row text-left">
                 <div class="offset-2 col-8">
-                    <form action="SaveSchema" method="get">
+                    <form action="saveSchema.jsp" method="get">
                         <table class="table table-success">
                             <tbody>
                                 <tr>
-                                    <td>Course</td>
-                                    <td><%=course%></td>
+                                    <td >Course</td>
+                                    <td colspan="2"><%=course%></td>
                                 </tr>
                                 <tr>
                                     <td>Semester</td>
-                                    <td><%=sem%></td>
+                                    <td colspan="2"><%=sem%></td>
                                 </tr>
                                 <tr>
                                     <td>Branch</td>
-                                    <td><%=branch%></td>
+                                    <td colspan="2"><%=branch%></td>
                                 </tr>
-                              
-                                    <input type="text" value="<%= branch %>" name = "branch" hidden  />
-                                    <input type="text" value="<%= course %>" name = "course" hidden />
-                                    <input type="text" value="<%= sem %>" name = "sem" hidden />
-                                     <input type="text" value="<%= ctype %>"  name = "ctype" hidden />
-                                      
+
+                            <input type="text" value="<%= branch%>" name = "branch" hidden  />
+                            <input type="text" value="<%= str %>" name = "course" hidden />
+                            <input type="text" value="<%= sem%>" name = "sem" hidden />
+                            <% for (int k = 0; k < 8; k++) {%> 
+                            <tr>
+                                <td>Subject Code <%=k + 1%></td>
 
 
-                                <% for (int k = 0; k < 8; k++) {%> 
-                                <tr>
-                                    <td>Subject Code <%=k + 1%></td>
+                                <td>
+                                    <input list='subjectList' name='subcodeList<%=k + 1%>'  class="form-control">
+                                    <datalist id='subjectList'>
+                                        <%int i;
+                                            for (i = 0; i < subjectList.size(); i++) {
+                                                String mysubcode = subjectList.get(i);
+                                        %>
+                                        
+                                        <option value="<%=mysubcode%>"><%=mysubcode%></option>
+                                        <% }%>
+                                    </datalist>
+                                </td>
+                                <td>
+
+                                    <select name='subjectTypeList<%=k + 1%>' class="form-control">
+                                        <option value="0">T</option>
+                                        <option value='1'>P</option>
+                                        <option value='2'>T+P</option>
+                                    </select>
+                                </td>
+
+                            </tr>
+                            <%}%>
 
 
-                                    <td>
-                                        <input list='subjectList' name='subcodeList<%=k + 1%>'>
-                                        <datalist id='subjectList'>
-                                            <%int i;
-                                                for (i = 0; i < subjectList.size(); i++) {
-                                                    String mysubcode = subjectList.get(i);
-                                            %>
-                                            <option value="<%=mysubcode%>"><%=mysubcode%></option>
-                                            <% }%>
-                                        </datalist>
-                                    </td>
-                                    <td>
-
-                                        <select name='subjectTypeList<%=k + 1%>'>
-                                            <option value='0'>T</option>
-                                            <option value='1'>P</option>
-                                            <option value='2'>T+P</option>
-                                        </select>
-                                    </td>
-
-                                </tr>
-                                <%}%>
-
-
-                                <tr>
-                                    <td colspan="3">
-                                        <input type="submit" class="form-control btn btn-success" value="Submit"/>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td colspan="3">
+                                   <center> <input type="submit" class="form-control btn btn-success" value="Submit" style="width:150px;" align="center"/></center>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
 
@@ -187,57 +155,58 @@
 
                                 //String qr1="select subject_name,subject_code,subtype from subject_table,schema_table where subject_code in(select subcode from schema_table where classid="+class_id+") and sem="+sem;
                                 //String qr1 = "select distinct(subject_name),subcode,subtype from schema_table,subject_table where subcode=subject_code and classid='"+class_id+"' and sem='"+sem+"'";
-                              try{
-                                String qr1 = "select  subject_name,subcode,subtype from schema_table,subject_table where subject_code=subcode and branch='"+branch+"' and sem='"+sem+"' and coursetype='"+ctype+"' and course='"+course+"'";
+                                try {
+                                    String qr1 = "select  subject_name,subcode,subtype from schema_table,subject_table where subject_code=subcode and branch='" + branch + "' and sem='" + sem + "' and coursetype='" + coursetype + "' and course='" + course + "'";
 
-                                PreparedStatement ps1 = con.prepareStatement(qr1);
+                                    PreparedStatement ps1 = con.prepareStatement(qr1);
 
-                                ResultSet rs1 = ps1.executeQuery();
-                                int i = 1;
-                                while (rs1.next()) {
-                                    String sn = rs1.getString("subject_name");
-                                      //out.println(sn);
-                                    String sc = rs1.getString("subcode");
-                                    //out.println(sc);
+                                    ResultSet rs1 = ps1.executeQuery();
+                                    int i = 1;
+                                    while (rs1.next()) {
+                                        String sn = rs1.getString("subject_name");
+                                        //out.println(sn);
+                                        String sc = rs1.getString("subcode");
+                                        //out.println(sc);
 //                                    String sc = rs1.getString("subject_code");
-                                    String st1 = rs1.getString("subtype");
-                                      //out.println(st1);
-                                    String st = "";
-                                    if (st1.equals("0")) {
-                                        st += "T";
-                                    } else if (st1.equals("1")) {
-                                        st += "P";
-                                    } else {
-                                        st += "T+P";}
-                                    
+                                        String st1 = rs1.getString("subtype");
+                                        //out.println(st1);
+                                        String st = "";
+                                        if (st1.equals("0")) {
+                                            st += "T";
+                                        } else if (st1.equals("1")) {
+                                            st += "P";
+                                        } else {
+                                            st += "T+P";
+                                        }
+
                             %><tr>
                                 <td><%= i++%></td>
                                 <td><%= sc%></td>
-                                <td><%= sn %></td>
+                                <td><%= sn%></td>
                                 <td><%= st%></td>
-                                
+
                                 <td class="hidden-print">
                                     <form action="DeleteSubject" method="post">
                                         <input type="hidden" value="<%=sc%>" name="subcode"/>  
                                         <input type="hidden" value="<%=st1%>" name="subtype"/>
                                         <input type="hidden" value="<%=branch%>" name="branch"/>
-                                        <input type="hidden" value="<%=ctype%>" name="ctype"/>
+                                        
                                         <input type="hidden" value="<%=sem%>" name="sem"/>
-                                        <input type="hidden" value="<%=course %>" name="course"/>
+                                        <input type="hidden" value="<%= str %>" name="course"/>
+                                        
                                         <input type="submit" class="btn btn-primary" value="Delete"/>
                                     </form>
                                 </td>  
                             </tr>
-                            <% 
-                                }
-                              }
-                            catch(Exception e)
-                                    {out.println(e);}%>
+                            <%
+                                    }
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }%>
 
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
+            </div>                
     </body>
 </html>

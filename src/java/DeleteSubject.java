@@ -24,6 +24,7 @@ import javax.servlet.http.HttpSession;
  * @author Nice
  */
 public class DeleteSubject extends HttpServlet {
+    private Object Intarger;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -52,25 +53,27 @@ public class DeleteSubject extends HttpServlet {
         HttpSession session=request.getSession();
             //String class_id=(String)session.getAttribute("class_id");
             
-            String sem=request.getParameter("sem");
-            String sc=request.getParameter("subcode");
-            String st=request.getParameter("subtype");
-            String ctype = request.getParameter("ctype");
+            int sem = Integer.parseInt(request.getParameter("sem"));
+            String subcode=request.getParameter("subcode");
+            String subtype=request.getParameter("subtype");
+//            String ctype = request.getParameter("ctype");
            String course=request.getParameter("course");
            String branch = request.getParameter("branch");
-        out.println(sc);
-        out.println(st);
-        //out.println(sem);
+        out.println("branch = "+branch);
+        out.println("<br> sem = "+ sem);
+        out.println("<br> subcode ="+subcode);
+        out.println("<br> subtype ="+subtype);
+        out.println("<br> course = "+ course);
         
-        String qr="delete from schema_table where subcode=? and subtype=? ";
+        String qr="delete from schema_table where subcode=? and subtype=? and sem=? ";
         PreparedStatement ps=con.prepareStatement(qr);
-        ps.setString(1, sc);
-        ps.setInt(2,Integer.parseInt(st));
+        ps.setString(1, subcode);
+        ps.setInt(2,Integer.parseInt(subtype));
 //        ps.setString(3, class_id);
-//        ps.setInt(4,Integer.parseInt(sem));
+       ps.setInt(3,sem);
         int n=ps.executeUpdate();
         //out.println("rows deleted:"+n);
-        response.sendRedirect("subjectAlloc.jsp?course="+course+"&sem="+sem+"&ctype="+ctype+"&branch="+branch);
+        response.sendRedirect("subjectAlloc.jsp?course="+course+"&sem="+sem+"&branch="+branch);
         }
     }
 
