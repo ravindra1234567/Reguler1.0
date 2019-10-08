@@ -64,10 +64,10 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-lg-12">
+<!--				<div class="col-lg-12">
 					<label class="checkbox-inline small">
 						<input class="test-result-date" type="checkbox" required>
 						I accept the terms and conditions.
 					</label>
-				</div>
+				</div>-->
 				

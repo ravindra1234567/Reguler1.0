@@ -165,14 +165,14 @@
         <center>
             <div id="d1" width="100%">
 
-                <hr>
+                
                 <h2 align="center"  style=" color: rgb(2,159,91);">
                     Institute of Engineering & Technology -DAVV
                     <br>   (RASA Form)</br>
                 </h2>
-                <hr>
+                
 
-                <hr>
+                
                 <br>
                 <table class="table table-bordered" >
 
@@ -206,31 +206,31 @@
                     </tr>
                     <tr>
                         <th>Exam Month:</th>
-                        <td>DEC 2019</td>
+                        <td colspan="2">DEC 2019</td>
                     </tr>
                     <tr>
                         <th>Name:</th>
-                        <td><%=name%></td>
+                        <td colspan="2"><%=name%></td>
                     </tr>
 
-                    <tr><th>Father Name:</th>
-                        <td> </td>
+                    <tr><th>Branch:</th>
+                        <td colspan="2"> <%= branch %></td>
                     </tr>
 
-                    <tr><th>Mother Name:
+                    <tr><th>Course:
                         </th>
-                        <td colspan="2"> </td>
+                        <td colspan="2"><%= course %> </td>
                     </tr>
 
-                    <tr><th>Gender:</th>
-                        <td colspan="2"> </td>
+                    <tr><th>Semester:</th>
+                        <td colspan="2"><%= sem %> </td>
                     </tr>
                     <tr>
                         <th>Status:</th>
                         <td colspan="2">Regular</td>
                     </tr>
                 </table>
-                <hr>
+                
                 <center>
                     <br>
                     <h3>Opted Paper Description(Not In Sequence According To Time Table Of University)</h3>
@@ -333,7 +333,6 @@
             <input id="pay" style="margin-top: 0px;"  type="button" onclick="window.print();" value="Print" class="btn btn-primary"/>
         </center>
     </div>
-</p>
 
 
 </center>

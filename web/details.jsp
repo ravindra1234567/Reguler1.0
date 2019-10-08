@@ -402,7 +402,7 @@
                 <button class="accordion" style="position:absolute;top:610px;"  id="bt11">Check Subject Schema </button>
                 <div class="panel" style="position: absolute;margin-top: 5%;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                        <form class="sign-up" id="f11" >
+                        <form class="sign-up" action="checkSchema.jsp" method="get" >
                             <div class="row">
                                 <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
 
@@ -604,8 +604,8 @@
                                     <option value="8">8Sem</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="row">
+<!--                        </div>
+                        <div class="row">-->
                             <div class="col-lg-6 p-2">
                                 <label for="reg"><small>Registered/Not-Registered<sup class="text-danger">*</sup></small></label>
                                 <select id="reg" name="reg" class="form-control">
@@ -616,25 +616,12 @@
                                 </select>
                             </div>         
                         </div>
-
-                        <div class="col-lg-12">
-                            <label class="checkbox-inline small">
-                                <input class="test-result-date" type="checkbox" required>
-                                I accept the terms and conditions.
-                            </label>
-                        </div>
-
                         <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
                             <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
                         </div>
                     </form>
                 </div>
-
-
-
             </div>
-
-
             <button class="accordion" style="top:860px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
             <button class="accordion" style="top:910px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
             <button class="accordion" style="top:960px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>

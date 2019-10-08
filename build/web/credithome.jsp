@@ -13,7 +13,7 @@
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <link href="css/sol.css" rel="stylesheet" type="text/css"/>
         <jsp:include page="bootstrap_file.jsp" /> 
-    </head>
+    
     <script>
         var e = 0;
         var prev = 0;
@@ -85,6 +85,7 @@
             }
         }
     </script>
+    </head>
     <body>
         <jsp:include page="header.html" />
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
@@ -115,13 +116,13 @@
 
             </div>
 
-            <hr>
+            
             <div >
                 <div class="col-12">
                     <center>
                         <form action="UpdateCredits" onsubmit="return check()" method="post">
                             <div class="container mt-3">
-                                <br><input class="form-control" id="myInput" type="text" placeholder="Search............"> <br>
+                                <input class="form-control" id="myInput" type="text" placeholder="Search............"> <br>
                                 <table class="table table-bordered">
                                     <thead >
                                         <tr>

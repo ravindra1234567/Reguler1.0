@@ -11,10 +11,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="icon" href="input/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/button.css">
+        <title>Ex-Show Permission </title>
+
         <jsp:include page="bootstrap_file.jsp" />
         
 

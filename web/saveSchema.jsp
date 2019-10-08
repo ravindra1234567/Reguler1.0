@@ -101,23 +101,7 @@
                 ps.setInt(6, subject_type);
                 try {
                     int n = ps.executeUpdate();
-                    //out.println("rows updated:" + n + "<br>");
-
-                    out.println(" ..");
-                    if (n > 0) {
-                        %>
-                                <script>
-                                Swal.fire({type: 'success',title:'Subject added successfully',})
-                                .then(function(){window.location ='subjectAlloc.jsp' ;});
-                                </script>;
-
-                  <%  } else {
-                        out.println("<script>"
-                                + "Swal.fire({type: 'error',title:'Subject was not added',title:'There was some problem',})"
-                                + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
-                                + "</script>");
-                    }
-
+                    out.println("rows updated:" + n + "<br>");
                 } catch (Exception e) {
                     out.println(e);
                 }
@@ -126,6 +110,8 @@
         }
     }
 //             response.sendRedirect("subjectAlloc.jsp");
+     response.sendRedirect("subjectAlloc.jsp?course="+str+"&sem="+sem+"&branch="+branch);
+                        
 
 %>
 

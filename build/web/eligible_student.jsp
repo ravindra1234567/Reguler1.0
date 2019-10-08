@@ -15,43 +15,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="input/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"/>
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="css/sol.css">
         <jsp:include page="bootstrap_file.jsp" />
-        <style>
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 98%;
-    margin-left: 1%;
-    margin-right: 1%;
-}
-th{background-color: #e4e4e0;}
-td, th {
-    border: 1px solid;
-    text-align: left;
-    padding: 8px;
-}
-
-
-</style>
-        <title>Payment Status</title>
+        <title>Registered Student </title>
     </head>
-    <header>
-<a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-<h2>Institute Of Engineering &amp; Technology</h2>
-<div class="menu">
-<!--  <a href="student_select.jsp">Student_Admit_Card</a>-->
- <!-- <a href="Register_sel.jsp">Student_Registration</a>-->
-  <a href="admin.jsp">Admin</a>
-  <a href="index.jsp">Home</a>
-</div>
-</header>
-    <body style="margin-bottom: 100px;">
+    <body>
+        <jsp:include page="header.html" />
         <%! HttpSession session1;
         String uname,uname1;
         String pass,pass1;
@@ -122,17 +90,20 @@ td, th {
         
      
              <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
-           <table border radius="1" style="border-collapse:collapse;margin-top: 20px;" width="800px" >
+           <table class="table table-bordered ml-2 mt-2" >
+              <thead>
                <tr>
                    
-                    <th><center>Sno.</center></th>
-                   <th><center>Roll Number</center></th>
-                   <th><center>NAME</center></th>
-                   <th><center>BRANCH</center></th>
-                   <th><center>SEMESTER</center></th>
-                    <th><center>Transection Id</center></th>
-                   <th><center>Slip</center></th>
+                    <th>Sno.</th>
+                   <th>Roll Number</th>
+                   <th>Name</th>
+                   <th>Branch</th>
+                   <th>Semester</th>
+                    <th>Transection Id</th>
+                   <th>Slip</th>
                </tr>
+               </thead>
+               <tbody>
         <%       
          
             while(rs.next()){
@@ -144,12 +115,12 @@ td, th {
             transection_id=rs.getString("application_id");
             //out.println(photourl);
            %>
-            <tr><td><center><%= i %></center></td>
-           <td><center><%=roll_no%></center></td>
-           <td><center><%= name %></center></td>
-           <td><center><%= branch %></center></td>
-           <td><center><%= sem %></center></td>
-           <td><center><%= transection_id %></center></td>
+            <tr><td><%= i %></td>
+           <td><%=roll_no%></td>
+           <td><%= name %></td>
+           <td><%= branch %></td>
+           <td><%= sem %></td>
+           <td><%= transection_id %></td>
            <td><img src="image/<%= photourl %>" class="img-thumbnail" alt="Cinque Terre" width="200" height="136"></td>
            </tr>
            
@@ -165,8 +136,9 @@ td, th {
 catch(Exception e){
                          out.println(e+"skn");}
    %>
+               </tbody>
            </table>
-    </center>   
+   <jsp:include page="footer.html" />
     </body>
     
 </html>

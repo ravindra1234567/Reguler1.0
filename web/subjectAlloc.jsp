@@ -35,10 +35,10 @@
                         course = "ME";
                     }
                 }
-                out.println("branch ="+branch);
-                out.println("<br> sem = "+ sem);
-                out.println("<br> course ="+course);
-                out.println("<br> coursetype = "+coursetype);
+//                out.println("branch ="+branch);
+//                out.println("<br> sem = "+ sem);
+//                out.println("<br> course ="+course);
+//                out.println("<br> coursetype = "+coursetype);
                 
                 Class.forName(pageContext.getServletContext().getInitParameter("Driver"));
                 Connection con = DriverManager.getConnection(pageContext.getServletContext().getInitParameter("Url"), pageContext.getServletContext().getInitParameter("UserName"), pageContext.getServletContext().getInitParameter("Password"));
@@ -207,6 +207,7 @@
                         </tbody>
                     </table>
                 </div>
-            </div>                
+            </div> 
+                                <jsp:include page="footer.html" />
     </body>
 </html>
