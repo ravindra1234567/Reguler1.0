@@ -5,9 +5,6 @@
 <html>
     <head>
         <title>File Upload</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="popup.css">
-        <link rel="icon" href="input/logo.png">
         <jsp:include page="bootstrap_file.jsp" /> 
         <style>
             form{
@@ -23,13 +20,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <link rel="stylesheet" type="text/css" href="css/button.css">
     </head>
-    <header>
-        <a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-        <h2>Institute Of Engineering &amp; Technology</h2>
-        <div class="menu">
-            <a href="index.jsp">Home</a>
-        </div>
-    </header>
+
     <div>
         <body>
            
@@ -53,6 +44,7 @@
 //            status = (String) session1.getAttribute("s");
 //            ServletContext context = getServletContext();
             %>
+            <jsp:include page="header.html" />
             <div class="container mx-auto">
                         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
                 <center>
@@ -103,19 +95,8 @@
                                 
                            </form></center>
                     </div>
-            </div>               
+            </div>
+                            <jsp:include page="footer.html" />
         </body>
-        <footer style="position: relative;top:10px;">
-            <p align="center" id="p1">
-                Exam Registration Portal
-            </p>
-            <hr align="center" width="60%">
-            <p align="center" id="p2">
-                Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
 
-                For any queries contact ravindrakushwahanwg@gmail.com.
-                Copyright © 2019 IET DAVV. All right reserved.
-            </p>
-
-        </footer>
 </html>

@@ -46,4 +46,10 @@
         background-color: white;
 
     }
+    
+     @media print { 
+               .noprint { 
+                  visibility: hidden; 
+               } 
+            } 
     </style>

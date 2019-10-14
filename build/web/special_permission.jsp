@@ -43,25 +43,23 @@
             }
 
         </style>
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="icon" href="input/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/button.css">
         <jsp:include page="bootstrap_file.jsp" />
     </head>
-    <body>    <header>
-            <a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-            <h2>Institute Of Engineering &amp; Technology</h2>
-        </header>
+    <body>   
+        <jsp:include page="header.html" />
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
-
+        <div class="container">
         <form action="permission_grant.jsp">
-            <table cellpadding="4" cellspacing="1" border="1" style="border-collapse:collapse;margin-bottom: 7px;border-color: #cdcdcd" align="Center">
+            <table class="table table-bordered">
+                <thead>
                 <tr>
                     <td ><b>Subject Code</b></td>
                     <td ><b>Subject Name</b></td>
                     <td><b>Subject Type</b></td>
                     <td><b>Grant Permission</b></td>
                 </tr>
+                </thead>
+                <tbody>
                 <%
                     while (rs.next()) {
                         do {
@@ -90,7 +88,7 @@
                     <td>
                         <span><%= sub_type1%></span>
                     </td>
-                    <td><input type="checkbox" name="sub_code" value=<%=key%> /></td>
+                    <td><input type="checkbox" style = "width:30px;height:30px;" name="sub_code" value=<%=key%>   /></td>
 
                 </tr>
 
@@ -98,42 +96,22 @@
                 <%
                     } while (rs.next());
                 %>
-
+                </tbody>
             </table>
             <input type="hidden" name="eno" value="<%=eno%>">
             <input type="hidden" name="sem" value="<%=sem%>">
             <center>   <input type="submit" value="submit" style="margin-left:auto;margin-right:auto" class="btn btn-success"></center>
         </form>
+        </div>
         <%
 
                 }
-                /* if(i!=0)
-                 {
-                 out.println("Permission Granted...!!!");
-                        
-                 }
-                 else
-                 {
-                 out.println("Permission Not Granted...!!!");  
-                 }
-                 */
             } catch (Exception e) {
                 out.println(e);
             }
 
         %>
+        <jsp:include page="footer.html" />
     </body>
-    <footer>
-        <p align="center" id="p1">
-            Exam Registration Portal
-        </p>
-        <hr align="center" width="60%">
-        <p align="center" id="p2">
-            Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
-
-            For any queries contact ravindrakushwahanwg@gmail.com.
-            Copyright © 2019 IET DAVV. All right reserved.
-        </p>
-
-    </footer>
+    
 </html>

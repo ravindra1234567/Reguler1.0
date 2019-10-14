@@ -13,7 +13,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="popup.css">
-        <link rel="icon" href="input/logo.png">
         <jsp:include page="bootstrap_file.jsp" /> 
         <title>Admin Home</title>
 

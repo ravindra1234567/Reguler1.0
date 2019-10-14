@@ -29,7 +29,7 @@
 			
         }else{
                     document.getElementById("f1").action = "ex_student.jsp";
-			
+			alert("hi");
 		}
                 
                 

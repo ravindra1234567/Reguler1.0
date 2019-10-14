@@ -8,25 +8,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="input/logo.png">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <style>
-
-
-</style>
         <title>Payment Status</title>
         <jsp:include page="bootstrap_file.jsp" /> 
     </head>
-    <header>
-<a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-<h2>Institute Of Engineering &amp; Technology</h2>
-<div class="menu">
-  <a href="admin.jsp">Admin</a>
-  <a href="index.jsp">Home</a>
-</div>
-</header>
     <body>
-        <div class="container">
+        <jsp:include page="header.html" />
+        <div class="container-fluid">
         <%! HttpSession session1;
         String uname,uname1;
         String pass,pass1;
@@ -110,10 +97,10 @@
        }
           %>
  
-        <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+        <a href="#"><button class="btn btn-primary mt-2" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
          <div class="container mt-3">
-                <input class="form-control fa fa-search" id="myInput" type="text" placeholder="Search............"> <br>
-                   <hr> <table class="table table-bordered">
+                <input class="form-control fa fa-search mb-2" id="myInput" type="text" placeholder="Search............"> <br>
+                    <table class="table table-bordered">
                         <thead>
                      <tr>
                          <th>
@@ -221,6 +208,7 @@
 	</table>
         </div>
         </div>
+               <jsp:include page="footer.html" />
        <script>
 
             $(document).ready(function () {
@@ -233,19 +221,5 @@
             });
         </script>
     </body>
-    
-<footer>
-<p align="center" id="p1">
-Exam Registration Portal
-</p>
-<hr align="center" width="60%">
-<p align="center" id="p2">
-Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
-
-            For any queries contact ravindrakushwahanwg@gmail.com.
-            Copyright © 2019 IET DAVV. All right reserved.
-</p>
-    
-</footer>
     
 </html>

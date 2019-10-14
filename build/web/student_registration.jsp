@@ -3,69 +3,14 @@
     <head>
         <title>Exam Registration</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="icon" href="input/logo.png">
         <jsp:include page="bootstrap_file.jsp" />
-
-        <style>
-            .genText{
-                font-family: 'Quicksand', sans-serif;
-                font-size: 1.2em;
-                font-weight: 1000;
-            }
-            .div1{
-                border-radius: 25px;
-                border: 2px solid;
-                padding: 10px;
-                padding-top: 0px;
-                margin-top: 50px;
-                margin-left: 20px;
-                margin-right: 20px;
-                margin-bottom: 50px;
-                width: 1100px;
-            }
-
-            #t1{
-                background-color: #B0C4DE;
-                width: 1000px;
-                font-family:calibri;
-                font-weight: bolder;
-                font-size: 17px;
-                margin-top: 1px; 
-            }
-
-            #t2{
-                font-family:calibri;
-                border-collapse:collapse;
-                width: 1000px;
-                border-color: grey;
-                font-size: 15px;
-            }
-
-        </style>
     </head>
-
-
-
-
-
     <%@page import="java.sql.*" import="java.io.IOException" 
             import="java.io.PrintWriter" 
             import="javax.servlet.annotation.WebServlet" 
             import="javax.servlet.http.HttpServlet" import="javax.servlet.http.HttpServletRequest" 
             import="javax.servlet.http.HttpServletResponse"  %>
     <%@page contentType="text/html" pageEncoding="UTF-8"%>
-    <header>
-        <a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-        <h2>Institute Of Engineering &amp; Technology</h2>
-        <div class="menu">
-            <a href="student_select.jsp">Student Admit Card</a>
-            
-            <a href="admin.jsp">Admin</a>
-            <a href="index.jsp">Home</a>
-        </div>
-    </header>
 
     <%! Connection con;
         String eno;
@@ -172,41 +117,18 @@
     <!DOCTYPE html>
 
     <title> EX_Student</title>
-    <style>
-        #d1{
-            border-radius: 25px;
-            border: 2px solid;
-            padding: 2%;
-            border-style: groove;
-        }
-        .footer {
-            position:relative;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height:150px;
-            background-color:limegreen;
-            color: white;
-            text-align: center;
-        }
-         .input{
-        font-size: 15px;
-        width: 800px;
-        height:27px;
-        
- }
-    </style>
 </head>
 <body>
+    <jsp:include page="header.html" />
 <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
 <div class="container mx-auto">
     
     <div id="d1">
-        <hr>
+        
         <h3 align="center">
             UTD Pay-Unpaid Examination Form/Print Reciept
         </h3>
-        <hr>
+        
 
         <div style="background-color: #B0C4DE;text-align: left;">
                 <center> Student Detail</center>
@@ -499,8 +421,7 @@
 <input type="hidden" name="enrollmentno" value=<%= eno %> />
 </form> 
 
-</body>
-</html>
+
 
 <%
 } else {
@@ -526,17 +447,6 @@
     }
 
 %>
-<footer>
-    <p align="center" id="p1">
-        D e v e l o p e d &nbsp&nbsp & &nbsp&nbsp D e s i g n e d &nbsp&nbsp b y :- 
-    </p>
-    <hr align="center" width="60%">
-    <p align="center" id="p2">
-         Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
-
-        For any queries contact ravindrakushwahanwg@gmail.com.
-        Copyright © 2019 IET DAVV. All right reserved.
-    </p>
-
-</footer>
+<jsp:include page="footer.html" />
+</body>
 </html>

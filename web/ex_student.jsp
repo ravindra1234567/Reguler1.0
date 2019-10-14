@@ -96,7 +96,9 @@
         eno = (request.getParameter("enrollmentno")).toUpperCase();
         status1 = request.getParameter("status");
         sem1 = request.getParameter("sem");
-
+        out.println("Enrollment No. = " + eno);
+        out.println("Status = "+status1);
+        out.println("Sem = " + sem1);
         HttpSession s = request.getSession();
         s.setAttribute("e", eno);
         s.setAttribute("s", status1);
@@ -164,7 +166,7 @@
             <div style="background-color: #B0C4DE;text-align: left;">
                 Student Detail
             </div>
-            <form action="ex_transaction.jsp" method="get">
+            <form action="challanupload.jsp">
 
                 <table class="table table-bordered shadow">
                     <tr>
@@ -387,7 +389,7 @@
                     %>                                   
 
                     <%	} else {
-                            response.sendRedirect("index.jsp");
+                            //response.sendRedirect("index.jsp");
                         }
                         if (count == 1) {
                             fee1 = 690;
@@ -447,7 +449,7 @@
         </form>
         </div>
 </div>
-</body>
+
 <%
 } else {
 %>
@@ -455,11 +457,11 @@
 <script>
     if (window.confirm("No Records Found"))
     {
-        window.location = "index.jsp";
+//        window.location = "index.jsp";
     }
     else
     {
-        window.location = "index.jsp";
+//        window.location = "index.jsp";
     }
 
 </script>
@@ -472,17 +474,6 @@
     }
 
 %>
-<footer>
-    <p align="center" id="p1">
-        D e v e l o p e d &nbsp&nbsp & &nbsp&nbsp D e s i g n e d &nbsp&nbsp b y :- 
-    </p>
-    <hr align="center" width="60%">
-    <p align="center" id="p2">
-        Developed & Designed by :- Hemant Sir,Ravindra Kumar Kushwaha and Sumit kr.
-
-        For any queries contact ravindrakushwahanwg@gmail.com.
-        Copyright © 2019 IET DAVV. All right reserved.
-    </p>
-
-</footer>
+<jsp:include page="footer.html" />
+</body>>
 </html>
