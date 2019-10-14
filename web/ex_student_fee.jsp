@@ -15,7 +15,7 @@
     <body>
         <jsp:include page="header.html" />
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
-        <div class="container">
+        <div class="container" style="margin-bottom: -35px;" >
         <table class="table table-bordered mt-2">
             <thead>
                 <tr>

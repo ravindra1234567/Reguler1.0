@@ -81,7 +81,7 @@ if( fname.length()<4 || !(fname.substring(fname.length()-4)).equalsIgnoreCase(".
     item.write(f);
 //out.println("5");
      path =context.getInitParameter("Input_Path_Ex")+ item.getName();//
-    query="Load data local infile ? into table ex_student  fields terminated by ',' enclosed by '\n' lines terminated by '\r\n' ignore 1 lines (roll_no,enrollment_no,name) set sem=?,subject_code=?,subject_type=?,branch='Unknown', status='EX' ";
+    query="Load data local infile ? into table ex_student  fields terminated by ',' enclosed by '\n' lines terminated by '\r\n' ignore 1 lines (roll_no,enrollment_no,name) set sem=?,subject_code=?,subject_type=?,branch='Unknown',reg='N', status='EX' ";
     pd=con.prepareStatement(query);
     pd.setString(1,path);
     pd.setInt(2,sem);

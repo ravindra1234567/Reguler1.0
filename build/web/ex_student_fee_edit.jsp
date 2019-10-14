@@ -24,7 +24,7 @@
         <jsp:include page="header.html" />
         
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
-        <div class="container">
+        <div class="container" style="margin-bottom: -3px;">
             <form action="ex_student_fee_update.jsp" method="get">
             <table class="table table-bordered">
                 <thead
