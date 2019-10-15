@@ -69,7 +69,7 @@
     </head>
     <body>
         <jsp:include page="header.html" />
-        <div class="container pb-3">
+        <div class="container pb-3"  style="margin-bottom:-8px;" >
 
             <form class="card form-signin" style="margin-top:60px;" method="post" action="details.jsp">
                 <div align="center" >

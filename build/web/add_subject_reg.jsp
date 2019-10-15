@@ -15,7 +15,8 @@
     </head>
     <body>
         <jsp:include page="header.html" />
-        <div class="container mt-5">
+         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+         <div class="container mt-5" style="margin-bottom: -50px;">
 
             <div class="input_fields_wrap">
                 <!--<button class="add_field_button">Add More Fields</button><br>-->

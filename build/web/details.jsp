@@ -55,9 +55,7 @@
                 align-content: center;
                 padding-left: 10%;
                 position: absolute;
-                margin-top: 7%;
-                width: 750px;
-                height: 80%;
+                margin-top: 15%;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.2s ease-out;
@@ -215,10 +213,10 @@
                     </div>
                 </header>
 
-                <img src="input/logo.png" alt="Institute of Engineering &amp; Technology" style="position: absolute;width: 450px;height: 450px;margin-left: 45%;opacity: 0.1;margin-top: 2%">
+                <!--<img src="input/logo.png" alt="Institute of Engineering &amp; Technology" style="position: absolute;width: 450px;height: 450px;margin-left: 45%;opacity: 0.1;margin-top: 2%">-->
 
                 <button class="accordion" style="position:absolute;" id="bt1">Student List ( For Deletion )</button>
-                <div class="panel" style="position: absolute;margin-top: 5%;">
+                <div class="panel" style="position: absolute;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" id="f11" name="slist" >
                             <div class="row">
@@ -238,7 +236,7 @@
 
                 </div>
 
-                <button class="accordion" style="top:185px;position: absolute;" id="bt2">Print RASA Form</button>
+                <button class="accordion" style="top:165px;position: absolute;" id="bt2">Print RASA Form</button>
                 <div class="panel" style="position: absolute;">
 
 
@@ -259,9 +257,9 @@
                     </div>
                 </div>
                 <!--Ex-Student new_csv_download-->
-                <button class="accordion" style="top:260px;position: absolute;" id="bt3">  <a href="new_csv_download.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Ex-Student ( All CSV Files )</a></button>
+                <button class="accordion" style="top:220px;position: absolute;" id="bt3">  <a href="new_csv_download.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Ex-Student ( All CSV Files )</a></button>
                 <!-- Upload Regular And Ex Student Data -->
-                <button class="accordion" style="top:310px;position: absolute;"  id="bt5">Upload Student data</button>
+                <button class="accordion" style="top:280px;position: absolute;"  id="bt5">Upload Student data</button>
                 <div class="panel">
                     <div id="one">
                         <form action="student_upload.jsp" enctype="multipart/form-data" method="post">
@@ -303,10 +301,10 @@
                     </div>
                 </div>
 
-                <button class="accordion" style="top:360px;position: absolute;"  id="bt7"><a  href="credithome.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Check Subjects Credits</a></button>
+                <button class="accordion" style="top:330px;position: absolute;"  id="bt7"><a  href="credithome.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Check Subjects Credits</a></button>
                 <!-- Make Regular Subject Schema -->
                 <!--<button class="accordion" style="top:360px;position: absolute;" id="bt6">Upload Subject Schema </button>-->
-                <button class="accordion" style="top:410px;position: absolute;"  id="bt7">Make Regular Subject Schema </button>
+                <button class="accordion" style="top:380px;position: absolute;"  id="bt7">Make Regular Subject Schema </button>
                 <div class="panel">
                     <div id="one">
 
@@ -329,34 +327,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="accordion" style="top:460px;position: absolute;" id="bt6">Upload Ex-Subject Schema </button>
-                <div class="panel">
-                    <div id="one">
-                        <form action="subject_schema_upload.jsp" enctype="multipart/form-data" method="post">
-
-                            <table width="650px">
-                                <tr>
-                                    <td style="text-align: center;"><h2 style="color:#800000">Upload Ex-Subject Schema</h2>
-
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="center">
-
-                                        <input type="file" name="file" multiple="" required="" />
-                                        <input type="submit" value="Upload"/>
-
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-
-                <button class="accordion" style="top:510px;position: absolute;"  id="bt7">Registered Student</button>
+                <!-- Add New Subject -->
+                <button class="accordion" style="top:430px;position: absolute;color:white" id="bt6"><a href="add_subject_reg.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Add New Subject </a></button>
+                <button class="accordion" style="top:480px;position: absolute;"  id="bt7">Registered Student</button>
                 <!--<button class="accordion" style="position:absolute;" id="bt1">Student List ( For Deletion )</button>-->
-                <div class="panel" style="position: absolute;margin-top: 5%;">
+                <div class="panel" style="position: absolute;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" action="eligible_student.jsp" >
                             <div class="row">
@@ -374,8 +349,8 @@
                         </form>
                     </div>
                 </div>
-                <button class="accordion" style="top:560px;position: absolute;"  id="bt8">Not Registered Student</button>
-                <div class="panel" style="position: absolute;margin-top: 5%;">
+                <button class="accordion" style="top:530px;position: absolute;"  id="bt8">Not Registered Student</button>
+                <div class="panel" style="position: absolute;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" action="not_eligible_student.jsp" method="post" >
                             <div class="row">
@@ -398,8 +373,8 @@
                 </div>
 
 
-                <button class="accordion" style="position:absolute;top:610px;"  id="bt11">Check Subject Schema </button>
-                <div class="panel" style="position: absolute;margin-top: 5%;">
+                <button class="accordion" style="position:absolute;top:580px;"  id="bt11">Check Subject Schema </button>
+                <div class="panel" style="position: absolute;">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" action="checkSchema.jsp" method="get" >
                             <div class="row">
@@ -418,12 +393,12 @@
 
                     </div>
                 </div>
-                <button class="accordion" style="top:660px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
+                <button class="accordion" style="top:630px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
 
 
 
 
-                <button class="accordion" style="top:710px;position: absolute;"  id="bt8">Grant Special permission</button>
+                <button class="accordion" style="top:680px;position: absolute;"  id="bt8">Grant Special permission</button>
                 <div class="panel">
                     <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                         <form class="sign-up" action="special_permission.jsp" method="post">
@@ -460,12 +435,6 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
-                                <label class="checkbox-inline small">
-                                    <input class="test-result-date" type="checkbox" required>
-                                    I accept the terms and conditions.
-                                </label>
-                            </div>
 
                             <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
                                 <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
@@ -475,12 +444,8 @@
                 </div>
             </div>
 
-
-
-
-
-            <button class="accordion" style="position:absolute;top:760px;"  id="bt11">Manual Unpaid to Paid</button>
-            <div class="panel" style="position: absolute;margin-top: 5%;">
+            <button class="accordion" style="position:absolute;top:730px;"  id="bt11">Manual Unpaid to Paid</button>
+            <div class="panel" style="position: absolute;">
                 <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                     <form class="sign-up" action="paid.jsp">
                         <div class="row">
@@ -516,21 +481,14 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <label class="checkbox-inline small">
-                                <input class="test-result-date" type="checkbox" required>
-                                I accept the terms and conditions.
-                            </label>
-                        </div>
-
                         <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
                             <button type="submit" class="btn btn-success btn-block sign-up st"  >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
                         </div>
                     </form>
                 </div>
             </div>
-            <button class="accordion" style="position:absolute;top:810px;" id="bt12">Payment Status</button>
-            <div class="panel" style="position: absolute;margin-top: 5%;">
+            <button class="accordion" style="position:absolute;top:780px;" id="bt12">Payment Status</button>
+            <div class="panel" style="position: absolute;">
                 <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
                     <form class="sign-up" action="reg_not_reg_ex.jsp">
                         <div class="row">
@@ -603,8 +561,8 @@
                                     <option value="8">8Sem</option>
                                 </select>
                             </div>
-<!--                        </div>
-                        <div class="row">-->
+                            <!--                        </div>
+                                                    <div class="row">-->
                             <div class="col-lg-6 p-2">
                                 <label for="reg"><small>Registered/Not-Registered<sup class="text-danger">*</sup></small></label>
                                 <select id="reg" name="reg" class="form-control">
@@ -621,9 +579,9 @@
                     </form>
                 </div>
             </div>
-            <button class="accordion" style="top:860px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
-            <button class="accordion" style="top:910px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
-            <button class="accordion" style="top:960px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
+            <button class="accordion" style="top:830px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
+            <button class="accordion" style="top:880px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
+            <button class="accordion" style="top:930px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
         </div>
 
         <script>
@@ -675,7 +633,7 @@
                 }
             });
         </script>
-        <div style="position: relative;top:915px;">
+        <div style="position: relative;top:880px;">
             <jsp:include page="footer.html" />
         </div>
     </body>
