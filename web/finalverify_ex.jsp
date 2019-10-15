@@ -99,7 +99,7 @@
     <div align="left" style="margin-left:5px"> 
         <button onclick="goBack();" class="btn btn-primary"/><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button>
 </div>
-<div id="d1" class="container">
+<div id="d1" class="container"  style="margin-bottom: -3px;">
     <center> <img  src="tick.jpg" name="tick" alt="Tick" ></center>
 </div>
 

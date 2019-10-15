@@ -56,6 +56,8 @@
                 padding-left: 10%;
                 position: absolute;
                 margin-top: 15%;
+                width: 750px;
+                height: 80%;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.2s ease-out;
@@ -633,7 +635,7 @@
                 }
             });
         </script>
-        <div style="position: relative;top:880px;">
+        <div style="position: relative;top:870px;">
             <jsp:include page="footer.html" />
         </div>
     </body>

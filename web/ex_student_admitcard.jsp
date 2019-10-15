@@ -32,7 +32,7 @@
     </head>
     <body>
         <jsp:include page="header.html" />
-        <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+        <a href="#"><button class="btn btn-primary noprint" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
         <div class="container">
         <%!String eno, eno1;
             int i;
@@ -147,7 +147,7 @@
 
                         <tr>
                             <th>Exam Name:</th>
-                            <td>APR 2019</td>
+                            <td>Nov 2019</td>
                         </tr>
 
                         <tr>
@@ -242,7 +242,7 @@
         %>
         <div >
         <center>
-            <input id="pay" style="margin-top: 0px;"  type="button" onclick="window.print();" value="Print" class="btn btn-primary"/>
+            <input id="pay" style="margin-top: 0px;"  type="button" onclick="window.print();" value="Print" class="btn btn-primary noprint"/>
         </center>
     </div>
 
