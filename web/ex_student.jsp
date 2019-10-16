@@ -35,6 +35,7 @@
         int sem_num;
         String sub_type, sub_type1;
         int fee1 = 0;
+        Connection con;
     %>
     <%
 
@@ -52,7 +53,15 @@
 
             ServletContext context = getServletContext();
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
+            con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
+             } catch (Exception e) {
+
+         out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'There was Some Problem',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
+    }
 
             PreparedStatement ps = con.prepareStatement("select * from ex_student where enrollment_no=? and sem=?");
             ps.setString(1, eno);
@@ -388,27 +397,15 @@
 
 <%
 } else {
-%>
+          out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Recored Not Find',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
 
-<script>
-    if (window.confirm("No Records Found"))
-    {
-//        window.location = "index.jsp";
-    }
-    else
-    {
-//        window.location = "index.jsp";
-    }
-
-</script>
-<%
         }
 
-    } catch (Exception e) {
-
-        e.printStackTrace();
-    }
-
+   
 %>
 <jsp:include page="footer.html" />
 </body>>
