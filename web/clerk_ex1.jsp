@@ -28,6 +28,11 @@
     ResultSet rs2;
 %>
 <%
+    if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
+    
+    
     ServletContext context = getServletContext();
     //out.println("1");
     try {
@@ -268,5 +273,6 @@
     } catch (Exception e) {
 
         e.printStackTrace();
+    }
     }
 %>

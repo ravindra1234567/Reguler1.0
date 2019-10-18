@@ -83,6 +83,7 @@
 
 
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+        <div class="container">
         <table class="table table-bordered ml-2 mt-2" >
             <thead>
                 <tr>
@@ -129,6 +130,7 @@
             %>
             </tbody>
 </table>
+        </div>
 <jsp:include page="footer.html" />
 </body>
 

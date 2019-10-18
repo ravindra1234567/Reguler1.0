@@ -78,8 +78,8 @@
                 font-size:16px;
             }
             .container{
-                margin-bottom: 20px;
-                margin-top: 40px;
+                margin-bottom: -15px;
+                margin-top: 0px;
                 max-width: 600px;
             }
             .container form{

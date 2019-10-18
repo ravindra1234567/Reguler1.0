@@ -184,18 +184,23 @@
                                 <td><%= sc%></td>
                                 <td><%= sn%></td>
                                 <td><%= st%></td>
-
-                                <td class="hidden-print">
-                                    <form action="DeleteSubject" method="post">
-                                        <input type="hidden" value="<%=sc%>" name="subcode"/>  
-                                        <input type="hidden" value="<%=st1%>" name="subtype"/>
-                                        <input type="hidden" value="<%=branch%>" name="branch"/>
+                                <td class="subcode" subcode="<%=sc%>" hidden></td> 
+                                <td class="subtype" subtype="<%=st1%>" hidden></td>
+                                <td class="branch" branch="<%=branch%>" hidden ></td>
+                                <td class="sem" sem="<%=sem%>" hidden></td>
+                                <td class="course" course="<%=str%>" hidden></td>
+                                
+                                   
+                                    <!--<form action="subject_delete_reg.jsp" method="post">-->
+<!--                                        <input type="hidden" class="subcode" value="<%=sc%>" name="subcode"/>  
+                                        <input type="hidden" class="subtype" value="<%=st1%>" name="subtype"/>
+                                        <input type="hidden" class="branch" value="<%=branch%>" name="branch"/>
                                         
-                                        <input type="hidden" value="<%=sem%>" name="sem"/>
-                                        <input type="hidden" value="<%= str %>" name="course"/>
-                                        
-                                        <input type="submit" class="btn btn-primary" value="Delete"/>
-                                    </form>
+                                        <input type="hidden" class="sem" value="<%=sem%>" name="sem"/>
+                                        <input type="hidden" class="course" value="<%= str %>" name="course"/>
+                                        -->
+                                      <td>  <input type="submit" class="btn btn-primary btn_del" value="Delete"/>
+                                    <!--</form>-->
                                 </td>  
                             </tr>
                             <%
@@ -209,5 +214,44 @@
                 </div>
             </div> 
                                 <jsp:include page="footer.html" />
+                                <script>
+                                    
+              $(document).on('click',".btn_del", function() {
+            var subcode = $(this).parent().parent().children('.subcode').attr('subcode');
+            var subtype = $(this).parent().parent().children('.subtype').attr('subtype');
+            var branch = $(this).parent().parent().children('.branch').attr('branch');
+            var sem = $(this).parent().parent().children('.sem').attr('sem');
+            var course = $(this).parent().parent().children('.course').attr('course');
+             console.log(subcode);
+             console.log(subtype);
+             console.log(branch);
+             console.log(sem);
+             console.log(course);
+//             window.location.href = "delete_subject.jsp?sub="+value;
+
+             $.ajax({
+                 type:'POST',
+                 url:"subject_delete_reg.jsp",
+                 data:{subcode: subcode,
+                     subtype:subtype,
+                     branch:branch,
+                    sem:sem,
+                    course:course},
+                 cache:false,
+                 success:function(result){
+                     Swal.fire({
+                         type:'success',
+                         title:'Success',
+                         text:"Subject Deleted Successfully!!!",
+                         showConfirmButton: true
+                     }).then((result)=>{
+                        window.location.href = "subjectAlloc.jsp?course=" + course + "&sem=" + sem+"&branch=" +branch ;
+                     });
+                    
+                 }
+                 
+             });
+         });
+                                </script>
     </body>
 </html>

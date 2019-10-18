@@ -76,14 +76,24 @@
         {
             if (e > 0)
             {
-                alert("Please correct the entries marked in red!");
+               // alert("Please correct the entries marked in red!");
+               swal("Please correct the entries marked in red!", "You clicked the button!", "error");
                 return false;
             }
             else {
-                alert("Save Successfull!");
-                return true;
+                //alert("Save Successfull!");
+             Swal.fire({
+                 type:'success',
+                 title:"Updated",
+                 text:"Subject updated successfully",
+                 showConfirmButton: true
+                }).then((result)=>{
+                      return true; 
+                });
+             
             }
         }
+       
     </script>
     </head>
     <body>
@@ -131,7 +141,8 @@
                                             <th>Subject Name</th>
                                             <th>Theory Credits</th>
                                             <th>Practical Credits</th>
-
+                                            <th>Save Credit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTable">
@@ -145,10 +156,12 @@
 %>
                                         <tr>
                                             <td><%=++sno%></td>
-                                            <td><%=s1%></td>
-                                            <td><%=s2%></td>
-                                            <td><input type="text" value ="<%=s3%>" id="<%=s1%>1" name="<%=s1%>1" onkeyup="cal('<%=s1%>1')" class="form-control"></td>
+                                            <td class="sub_code" sub_code="<%=s1%>"><%=s1%></td>
+                                            <td class="sub_name" sub_name="<%=s2%>"><%=s2%></td>
+                                            <td><input type="text" value = "<%= s3 %>" id="<%= s1 %>1" name="<%= s1 %>1" onkeyup="cal('<%= s1%>1')" class="form-control"></td>
                                             <td><input type="text" value ="<%=s4%>" id="<%=s1%>2" name="<%=s1%>2" onkeyup="cal('<%=s1%>2')" class="form-control"></td>
+                                            <td><button type="submit"class="btn btn-info "><i class="fas fa-lg fa-save"></i></button></td>
+                                            <td><button type="button"  class="btn_del btn btn-danger" /><i class="fas fa-trash fa-lg"></i></button></td>
                                         </tr>
                                         <% }
                                             session.setAttribute("subject_code_list", sclist);
@@ -156,7 +169,7 @@
 
                                     </tbody>
                                 </table>
-                                <center><input type="submit" value="Save Credits" class="btn btn-success"></center>
+                                
                             </div>
                         </form>
                     </center>
@@ -172,6 +185,30 @@
                     });
                 });
             });
+            
+         $(document).on('click',".btn_del", function() {
+             var value = $(this).parent().parent().children('.sub_code').attr('sub_code');
+             console.log(value);
+//             window.location.href = "delete_subject.jsp?sub="+value;
+             $.ajax({
+                 type:'POST',
+                 url:"delete_subject.jsp",
+                 data:{sub: value},
+                 cache:false,
+                 success:function(result){
+                     Swal.fire({
+                         type:'success',
+                         title:'Success',
+                         text:"Subject Deleted Successfully!!!",
+                         showConfirmButton: true
+                     }).then((result)=>{
+                         location.reload();
+                     });
+                    
+                 }
+                 
+             });
+         });
         </script>
         <jsp:include page="footer.html" />
     </body>

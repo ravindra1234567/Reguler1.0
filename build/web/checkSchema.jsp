@@ -35,6 +35,9 @@
             String str;
         %>
         <%
+          if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
             ServletContext context = getServletContext();
             Class.forName(context.getInitParameter("Driver"));
             Connection con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
@@ -102,6 +105,7 @@
 
 
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+        <div class="container">
         <table class="table table-bordered ml-2 mt-2">
             <thead>
                 <tr>
@@ -152,9 +156,11 @@
                     } catch (Exception e) {
                         out.println(e + "skn");
                     }
+          }
                 %>
             </tbody>
         </table>
+        </div>
         
                 <jsp:include page="footer.html" />
     </body>

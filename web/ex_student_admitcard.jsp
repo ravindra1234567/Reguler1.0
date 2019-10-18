@@ -156,7 +156,7 @@
                         </tr>
                         <tr>
                             <th>Exam Month:</th>
-                            <td>APR 2019</td>
+                            <td>Nov 2019</td>
                         </tr>
                         <tr>
                             <th>Name:</th>

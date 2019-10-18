@@ -39,6 +39,7 @@
         String sub_type, sub_type1;
         int fee1 = 0;
         String coursetype;
+        ServletContext context;
     %>
     <%
 
@@ -84,10 +85,17 @@
         s.setAttribute("sem", sem1);
         try {
 
-            ServletContext context = getServletContext();
+            context = getServletContext();
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
+             } catch (Exception e) {
 
+          out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'There was Some Problem',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
+    }
             //PreparedStatement ps = con.prepareStatement("SELECT roll_no,enrollment_no,name,year,branch,section,subcode,subtype,subject_name from all_students,schema_table,subject_table where subject_table.subject_code=schema_table.subcode and  all_students.enrollment_no=? and all_students.sem=? ");
 //            PreparedStatement ps = con.prepareStatement("SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where all_students.enrollment_no = ? and all_students.sem1=?  and schema_table.sem =? and schema_table.branch=? and schema_table.course = ? and schema_table.coursetype = ? and subject_table.subject_code=schema_table.subcode ");
             PreparedStatement ps = con.prepareStatement(" SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where enrollment_no=? and sem1=? and sem=? and coursetype=? and  course=? and branch=? and subject_table.subject_code=schema_table.subcode ");
@@ -425,27 +433,13 @@
 
 <%
 } else {
-%>
 
-<script>
-    if (window.confirm("No Records Found"))
-    {
-       // window.location = "index.jsp";
-    }
-    else
-    {
-        //window.location = "index.jsp";
-    }
-
-</script>
-<%
+                out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Recored Not Find',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
         }
-
-    } catch (Exception e) {
-
-        e.printStackTrace();
-    }
-
 %>
 <jsp:include page="footer.html" />
 </body>
