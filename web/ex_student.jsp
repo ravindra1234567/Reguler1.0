@@ -134,7 +134,7 @@
                             Registration for Examination
                         </th>
                         <td>
-                            <span>DEC 2018</span>
+                            <span><input type="text" value="Nov-Dec 2019" name="session1" hidden>Nov-Dec 2019</span>
                         </td>
                         <th>
                             Examination Centre(Code)
@@ -399,7 +399,7 @@
 } else {
           out.println(" ..");
         out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Recored Not Find',})"
+                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Already Registered ',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
 

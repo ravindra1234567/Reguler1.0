@@ -49,7 +49,7 @@
         } else {
             out.println("<script>"
                     + "Swal.fire({type: 'error',title:'Subject was not added',title:'There was some problem',})"
-                    + ".then(function(){window.location ='' ;});"
+                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
                     + "</script>");
         }
     } catch (Exception e) {
@@ -57,7 +57,7 @@
         out.println(" ..");
         out.println("<script>"
                     + "Swal.fire({type: 'error',title:'Subject was not added',title:'There was some problem',})"
-                    + ".then(function(){window.location ='' ;});"
+                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
                     + "</script>");
     }
 

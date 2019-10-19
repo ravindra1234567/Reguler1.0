@@ -132,6 +132,7 @@
         <div id="d1">
             
             <h3 align="center">
+                <span class="mb-2">Institute of Engineering & Technology - DAVV(Indore)</span><br>
                 UTD Pay-Unpaid Examination Form/Print Reciept ( SEM <%= sem%> )
             </h3>
             <div class="head1" style="z-index: 750;background-color: #B0C4DE;text-align: center;">
@@ -182,8 +183,7 @@
                         Name of College(Code)
                     </td>
                     <td  colspan="4">
-                        <span>
-                            INSTITUTE OF ENGINEERING &amp; TECHNOLOGY (IET), INDORE(808)</span>
+                        <span>INSTITUTE OF ENGINEERING &amp; TECHNOLOGY (IET), INDORE(808)</span>
                     </td>
                     <td rowspan="2" align="center">
                         <img id="ihoto" style="height:120px;width:100px;border-width:0px;"/>
@@ -415,7 +415,7 @@
 
             
             <h2 align="center"  >
-                Institute of Engineering & Technology -DAVV
+                Institute of Engineering & Technology - DAVV(Indore)
                 <br>   (RASA Form)</br>
             </h2>
             <br>

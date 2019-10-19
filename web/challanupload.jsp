@@ -17,11 +17,15 @@
             String eno;
             String status;
             String query2;
+            String ss;
         %>
         <%
+            ss = request.getParameter("session1");
+//            out.println(ss);
             HttpSession session1 = request.getSession();
             eno = (String) session1.getAttribute("e");
             status = (String) session1.getAttribute("s");
+            
             ServletContext context = getServletContext();
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
@@ -32,12 +36,14 @@
                 if (subject_codes != null) {
                     out.println("r2");
                     for (int i = 0; i < subject_codes.length; i++) {
-                        query1 = "update ex_student set reg=? where enrollment_no=? and subject_code=? and subject_type=?";
+                        query1 = "update ex_student set reg=?,session1=? where enrollment_no=? and subject_code=? and subject_type=? ";
                         PreparedStatement pd = con.prepareStatement(query1);
                         pd.setString(1, "Y");
-                        pd.setString(2, eno);
-                        pd.setString(3, (subject_codes[i]).substring(0, 6));
-                        pd.setString(4, (subject_codes[i]).substring(6, 7));
+                        pd.setString(2, ss );
+                        pd.setString(3, eno);
+                        pd.setString(4, (subject_codes[i]).substring(0, 6));
+                        pd.setString(5, (subject_codes[i]).substring(6, 7));
+                        
                         int j = pd.executeUpdate();
 
                     }
@@ -53,6 +59,7 @@
                 int i = pd.executeUpdate();
                 response.sendRedirect("transaction.jsp");
             }
+            
         %>
 
 

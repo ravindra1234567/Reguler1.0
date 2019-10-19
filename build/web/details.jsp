@@ -26,7 +26,7 @@
                 border: solid;
                 text-align: left;
                 outline: none;
-                font-size: 20px;
+                font-size: 17px;
                 font-family: sans-serif;
                 transition: 0.4s;
             }
@@ -210,8 +210,10 @@
                     <a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
                     <h2>Institute of Engineering &amp; Technology</h2>
                     <div class="menu">
-                        <a href="admin.jsp">Admin</a>
-                        <a href="index.jsp">Home</a>
+                        <a class="nav-item nav-link text-white" href="session_destroy.jsp">Logout</a>
+                        <a class="nav-item nav-link text-white"  href="admin.jsp">Admin</a>
+                        <a class="nav-item nav-link text-white"  href="index.jsp">Home</a>
+                        
                     </div>
                 </header>
 
@@ -259,7 +261,7 @@
                     </div>
                 </div>
                 <!--Ex-Student new_csv_download-->
-                <button class="accordion" style="top:220px;position: absolute;" id="bt3">  <a href="new_csv_download.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Ex-Student ( All CSV Files )</a></button>
+                <button class="accordion" style="top:220px;position: absolute;" id="bt3">  <a href="new_csv_download.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Download Ex-Student ( All CSV Files )</a></button>
                 <!-- Upload Regular And Ex Student Data -->
                 <button class="accordion" style="top:280px;position: absolute;"  id="bt5">Upload Student data</button>
                 <div class="panel">
@@ -303,7 +305,7 @@
                     </div>
                 </div>
 
-                <button class="accordion" style="top:330px;position: absolute;"  id="bt7"><a  href="credithome.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Check Subjects Credits</a></button>
+                <button class="accordion" style="top:330px;position: absolute;"  id="bt7"><a  href="credithome.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Check Subjects Credits</a></button>
                 <!-- Make Regular Subject Schema -->
                 <!--<button class="accordion" style="top:360px;position: absolute;" id="bt6">Upload Subject Schema </button>-->
                 <button class="accordion" style="top:380px;position: absolute;"  id="bt7">Make Regular Subject Schema </button>
@@ -330,7 +332,7 @@
                     </div>
                 </div>
                 <!-- Add New Subject -->
-                <button class="accordion" style="top:430px;position: absolute;color:white" id="bt6"><a href="add_subject_reg.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Add New Subject </a></button>
+                <button class="accordion" style="top:430px;position: absolute;color:white" id="bt6"><a href="add_subject_reg.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Add New Subject </a></button>
                 <button class="accordion" style="top:480px;position: absolute;"  id="bt7">Registered Student</button>
                 <!--<button class="accordion" style="position:absolute;" id="bt1">Student List ( For Deletion )</button>-->
                 <div class="panel" style="position: absolute;">
@@ -395,7 +397,7 @@
 
                     </div>
                 </div>
-                <button class="accordion" style="top:630px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
+                <button class="accordion" style="top:630px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
 
 
 
@@ -581,9 +583,9 @@
                     </form>
                 </div>
             </div>
-            <button class="accordion" style="top:830px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Clerk Verification</a></button>
-            <button class="accordion" style="top:880px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
-            <button class="accordion" style="top:930px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 20px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
+            <button class="accordion" style="top:830px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Clerk Verification</a></button>
+            <button class="accordion" style="top:880px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
+            <button class="accordion" style="top:930px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
         </div>
 
         <script>
