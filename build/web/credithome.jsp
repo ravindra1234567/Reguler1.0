@@ -101,7 +101,9 @@
         <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
 
         <%
-
+            if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
             ServletContext context = getServletContext();
             Class.forName(context.getInitParameter("Driver"));
             Connection con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
@@ -165,6 +167,7 @@
                                         </tr>
                                         <% }
                                             session.setAttribute("subject_code_list", sclist);
+            }
                                         %>
 
                                     </tbody>

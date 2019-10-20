@@ -4,6 +4,7 @@
     Author     : Ravindra
 --%>
 
+
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.io.PrintWriter"%>
@@ -30,6 +31,9 @@ String filename;
         %>
          
         <%
+            if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
           try{
          session1=request.getSession();
         
@@ -150,76 +154,16 @@ String filename;
       
         }
         </script>
-        <style>
-        /*
-           font-family: 'Raleway', sans-serif;
-           font-family: 'Quicksand', sans-serif;
-           font-family: 'Rajdhani', sans-serif;
-        */
-        .genText{
-          font-family: 'Quicksand', sans-serif;
-          font-size: 1.2em;
-          font-weight: 1000;
-        }
-             .div1{
-                border-radius: 25px;
-                border: 2px solid;
-                padding: 10px;
-                padding-top: 0px;
-                margin-top: 50px;
-                margin-left: 20px;
-                margin-right: 20px;
-                margin-bottom: 50px;
-                width: 1100px;
-                 }
-                 
-                 #t1{
-                     background-color: #B0C4DE;
-                     width: 1000px;
-                     font-family:calibri;
-                    font-weight: bolder;
-                    font-size: 17px;
-                     margin-top: 1px; 
-                 }
-                 
-                 #t2{
-                       font-family:calibri;
-                     border-collapse:collapse;
-                     width: 1000px;
-                     border-color: grey;
-                     font-size: 15px;
-                 }
-    
-            </style>
     </head>
-    
-  <header>
-<a href="index.jsp"><img id="logo" src="input/logo.png" alt="Institute of Engineering &amp; Technology"></a>
-<h2>Institute Of Engineering &amp; Technology</h2>
-<div class="menu">
-<!--  <a href="student_select.jsp">Student_Admit_Card</a>-->
- <!--<a href="clerk.jsp">Clerk Verification</a>-->
-  <a href="admin.jsp">Admin</a>
-  <a href="index.jsp">Home</a>
+<body>
+        <jsp:include page="header.html" />
+        <div align="left" style="margin-left:5px;margin-top: 5px;"> 
+        <button onclick="goBack();" class="btn btn-primary noprint"/><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button>
 </div>
-</header>
+    <center style="margin-bottom: 248px;margin-top: 100px;">
+        <h1>  <%=count%> Files generated at Path /var/lib/tomcat7/webapps/ROOT/output</h1>
 
-<center>
-    <h1>  <%=count %> Files generated at Path /var/lib/tomcat7/webapps/ROOT/output</h1>
-    
-</center> 
+    </center> 
+    <jsp:include page="footer.html" />
 </body>
- <footer>
-<p align="center" id="p1">
-D e v e l o p e d &nbsp&nbsp & &nbsp&nbsp D e s i g n e d &nbsp&nbsp b y :- 
-</p>
-<hr align="center" width="60%">
-<p align="center" id="p2">
-Vinod Thakure ,&nbsp Jayesh Punjabi &nbsp and &nbsp Tanveer Singh Bhatia.
-<br />
-For any queries contact 15bcs158@ietdavv.edu.in.
-Copyright © 2018 IET DAVV. All rights reserved.
-</p>
-    
-</footer>
 </html>

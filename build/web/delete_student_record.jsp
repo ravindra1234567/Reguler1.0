@@ -52,6 +52,9 @@ td, th {
          
         %>
          <% 
+             if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
                ServletContext context=getServletContext();  
            Class.forName(context.getInitParameter("Driver"));
             Connection con=DriverManager.getConnection(context.getInitParameter("Url"),context.getInitParameter("UserName"),context.getInitParameter("Password"));
@@ -168,6 +171,7 @@ td, th {
          }
 catch(Exception e){
                          out.println(e+"skn");}
+             }
    %>
            </table>
            </div>

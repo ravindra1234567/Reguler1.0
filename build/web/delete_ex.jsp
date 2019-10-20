@@ -63,6 +63,9 @@ td, th {
     
 %>
 <% 
+    if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
  
    ServletContext context=getServletContext();
    eno= request.getParameter("eno");
@@ -105,6 +108,7 @@ td, th {
           
           e.printStackTrace();
           out.println(e);        }
+    }
                %>
     </body>
 </html>

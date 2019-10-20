@@ -18,6 +18,9 @@
    int sem;
    %>
     <%
+        if (session.getAttribute("uname") == null || session.getAttribute("pass").equals("")){
+    response.sendRedirect("admin.jsp");
+    }else{
         String subcode = request.getParameter("sub");
      try{
         context = getServletContext();
@@ -39,6 +42,7 @@
         int n=ps.executeUpdate();
         out.println("hello");
         //response.sendRedirect("subjectAlloc.jsp?course="+course+"&sem="+sem+"&branch="+branch);
-       %>
+        }
+        %>
   
 
