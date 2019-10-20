@@ -40,11 +40,13 @@
         int s = psmnt.executeUpdate();
         out.println(" ..");
         if (s > 0) {
-
-            out.println("<script>"
-                    + "Swal.fire({type: 'success',title:'Subject added successfully',})"
-                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
-                    + "</script>");
+            out.println("<script> alert('Subject Added Successfully!');"
+                + "window.location ='add_subject_reg.jsp'; </script> ");
+//
+//            out.println("<script>"
+//                    + "Swal.fire({type: 'success',title:'Subject added successfully',})"
+//                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
+//                    + "</script>");
 
         } else {
             out.println("<script>"
@@ -54,11 +56,13 @@
         }
     } catch (Exception e) {
 
-        out.println(" ..");
-        out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Subject was not added',title:'There was some problem',})"
-                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
-                    + "</script>");
+        out.println("<script> alert('This Subject Already Added !');"
+                + "window.location ='add_subject_reg.jsp'; </script> ");
+//        out.println(" ..");
+//        out.println("<script>"
+//                    + "Swal.fire({type: 'error',title:'Subject was not added',title:'There was some problem',},location.reload();)"
+//                    + ".then(function(){window.location ='add_subject_reg.jsp' ;});"
+//                    + "</script>");
     }
 
 %>
