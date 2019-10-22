@@ -84,7 +84,7 @@
         s.setAttribute("s", status1);
         s.setAttribute("sem", sem1);
         try {
-
+            
             context = getServletContext();
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
@@ -92,13 +92,31 @@
 
           out.println(" ..");
         out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'There was Some Problem',})"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'There was Some Problem',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
     }
             //PreparedStatement ps = con.prepareStatement("SELECT roll_no,enrollment_no,name,year,branch,section,subcode,subtype,subject_name from all_students,schema_table,subject_table where subject_table.subject_code=schema_table.subcode and  all_students.enrollment_no=? and all_students.sem=? ");
 //            PreparedStatement ps = con.prepareStatement("SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where all_students.enrollment_no = ? and all_students.sem1=?  and schema_table.sem =? and schema_table.branch=? and schema_table.course = ? and schema_table.coursetype = ? and subject_table.subject_code=schema_table.subcode ");
-            PreparedStatement ps = con.prepareStatement(" SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where enrollment_no=? and sem1=? and sem=? and coursetype=? and  course=? and branch=? and subject_table.subject_code=schema_table.subcode ");
+            
+        PreparedStatement ps2 = con.prepareStatement(" SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where enrollment_no=? and sem1=? and sem=? and coursetype=? and  course=? and branch=? and subject_table.subject_code=schema_table.subcode and status=0 ");
+                                                            
+            ps2.setString(1, eno);
+            ps2.setInt(2, sem1);
+            ps2.setInt(3,sem1);
+            ps2.setString(6,branch );
+            ps2.setString(5, course );
+            ps2.setString(4, coursetype );
+            ResultSet rs2 =  ps2.executeQuery();
+            if (rs2.next()) {
+            }else{out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Record Not Find',title:'Already Registered ! ',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");}
+        
+        
+        PreparedStatement ps = con.prepareStatement(" SELECT roll_no,enrollment_no,name,year,branch1,section,subcode,subtype,subject_name,sem1 from all_students,schema_table,subject_table where enrollment_no=? and sem1=? and sem=? and coursetype=? and  course=? and branch=? and subject_table.subject_code=schema_table.subcode ");
                                                             
             ps.setString(1, eno);
             ps.setInt(2, sem1);
@@ -374,7 +392,7 @@
                         
                     }
                      else {
-                       // response.sendRedirect("index.jsp");
+                        response.sendRedirect("index.jsp");
                     }
 
 
@@ -436,7 +454,7 @@
 
                 out.println(" ..");
         out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Recored Not Find',})"
+                    + "Swal.fire({type: 'error',title:'Recored Not Fonnd',title:'Record Not Found',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
         }

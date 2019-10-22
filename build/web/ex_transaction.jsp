@@ -126,7 +126,7 @@
     <jsp:include page="bootstrap_file.jsp" />
 </head>
 <body>
-    <jsp:include page="header.html" />
+    <jsp:include page="student_header.jsp" />
     <div class="container">
 
         <div id="d1">
@@ -533,11 +533,15 @@
             }
         %>
 
-        <div  align="center">
-
-            <input id="pay" class="btn btn-success noprint" style="margin-top: 10px" type="button" onclick="window.print()" value="Print"/>
-
-        </div>     
+        <div align="center" class="mt-2">
+            
+                    <a href="">
+                        <button id="pay" style="" type="button" onclick="window.print()" value="Print" class="btn  btn-success noprint">Print</button>
+                    </a>
+                
+                    <a href="index.jsp" style="color:white;"><button class=" btn btn-danger noprint  ">Exit</button></a>
+                
+        </div>   
     </div>
     <jsp:include page="footer.html" />   
 </body>

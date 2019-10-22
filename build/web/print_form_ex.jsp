@@ -28,7 +28,7 @@
                     document.getElementById("f1").action = "student_registration.jsp";
 			
         }else{
-                    document.getElementById("f1").action = "ex_student.jsp";
+                    document.getElementById("f1").action = "print_slip_ex.jsp";
 			
 		}
                 
@@ -95,7 +95,7 @@
 			<form class="sign-up" id="f1" name="demo1">
 				<div class="row">
 					<div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-						Examination Registration Portal
+						Print Slip
 						<!--<button type="button" class="close text-white" onclick="$('div.sign-up').hide();$('div.video-ad').show();">&times;</button>-->
 					</div>
                                 </div>
@@ -175,12 +175,6 @@
                                                         <option value="8">8Sem</option>
 						</select>
 					</div>
-				</div>
-				<div class="col-lg-12">
-					<label class="checkbox-inline small">
-						<input class="test-result-date" type="checkbox" required>
-						I accept the terms and conditions.
-					</label>
 				</div>
 				<div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
                                      

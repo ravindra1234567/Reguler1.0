@@ -63,25 +63,22 @@
 
 
 <%
-    HttpSession ss = request.getSession();
-    enrollment_no = (String) ss.getAttribute("e");
-    status = (String) ss.getAttribute("s");
-    sem = (String) ss.getAttribute("sem");
+    enrollment_no = request.getParameter("enrollmentno");
+    status = (String) request.getParameter("status");
+    sem = (String) request.getParameter("sem");
 
     SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy hh:mm:ss");
     Date date = new Date();
     dt = sdf.format(date);
     sem1 = Integer.parseInt(sem);
-    name = (String) ss.getAttribute("name");
+//    name = (String) ss.getAttribute("name");
     //  ss.invalidate();
 
     sub_code = request.getParameterValues("sub_code");
     if (enrollment_no == null) {
         response.sendRedirect("index.jsp");
     }
-
     try {
-
         ServletContext context = getServletContext();
         Class.forName(context.getInitParameter("Driver"));
         Connection con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
@@ -92,14 +89,13 @@
         //ps2.setString(3,branch);
         ps2.setInt(3, sem1);
         ResultSet rs2 = ps2.executeQuery();
-
         rs2.last();
         branch = rs2.getString("branch");
         roll_no = rs2.getString("roll_no");
         course = rs2.getString("course");
+        name = rs2.getString("name");
         fee1 = rs2.getRow();
         rs2.beforeFirst();
-
         if (fee1 > 3) {
             fee1 = 3;
         }
@@ -108,6 +104,7 @@
         ResultSet rs = ps.executeQuery();
         rs.next();
         fee1 = rs.getInt(3);
+        
 %>
 
 
@@ -528,8 +525,11 @@
 
         <%                  }
             } catch (Exception e) {
-
-                e.printStackTrace();
+               out.println(" <script>alert('hi');</script>");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'Record Not Found ',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
             }
         %>
 

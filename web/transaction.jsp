@@ -86,7 +86,7 @@
 </head>
 <body>
     <jsp:include page="header.html" />
-    <a href="#"><button class="btn btn-primary" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+    <a href="#"><button class="btn btn-primary noprint" style="margin-left: 10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
     <div class="container mx-auto">
 
         <div id="menu_bar" style="background-color:yellowgreen;margin-top: 10px;"></div>
@@ -94,6 +94,7 @@
         <div id="d1">
 
             <h3 align="center">
+                 Institute of Engineering & Technology - DAVV(Indore)<br><br>
                 UTD Pay-Unpaid Examination Form/Print Reciept ( SEM <%= sem%> )
             </h3>
 
@@ -366,8 +367,8 @@
         <div id="d1">
 
 
-            <h2 align="center"  style=" color: rgb(2,159,91);">
-                Institute of Engineering & Technology -DAVV
+            <h2 align="center"  >
+                Institute of Engineering & Technology - DAVV(Indore)
                 <br>   (RASA Form)</br>
             </h2>
 
@@ -521,10 +522,10 @@
         <div align="center">
             
                     <a href="">
-                        <button id="pay" style="" type="button" onclick="window.print()" value="Print" class="btn  btn-success">Print</button>
+                        <button id="pay" style="" type="button" onclick="window.print()" value="Print" class="btn  btn-success noprint">Print</button>
                     </a>
                 
-                    <a href="index.jsp" style="color:white;"><button class=" btn btn-danger ">Exit</button></a>
+                    <a href="index.jsp" style="color:white;"><button class=" btn btn-danger noprint ">Exit</button></a>
                 
         </div>
         <!--</div>-->

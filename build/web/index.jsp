@@ -89,7 +89,7 @@
     </head>
     
     <body>
-        <jsp:include page="header.html" />
+        <jsp:include page="student_header.jsp" />
      <div class="container">
         <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
 			<form class="sign-up" id="f1" name="demo1">

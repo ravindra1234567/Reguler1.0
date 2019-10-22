@@ -58,7 +58,7 @@
 
          out.println(" ..");
         out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'There was Some Problem',})"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'There was Some Problem',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
     }
@@ -96,7 +96,7 @@
     </style>
 </head>
 <body>
-    <jsp:include page="header.html" />
+    <jsp:include page="student_header.jsp" />
      <a href="#"><button class="btn btn-primary" style="margin-left:10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
     <div class="container mx-auto">
         <br> <br> 
@@ -291,7 +291,7 @@
                     <%
                         sem1 = sem1.substring(0, 1);
                         sem_num = Integer.parseInt(sem1);
-
+//                        try{
                         PreparedStatement ps2 = con.prepareStatement("select distinct * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code  where ex_student.enrollment_no=? and subschema.branch=? and ex_student.reg='N' and subschema.sem=? ");
                         ps2.setString(1, eno);
                         ps2.setString(2, branch);
@@ -326,7 +326,7 @@
                         <td>
                             <span><%= sub_type1%></span>
                         </td>
-                        <td><input type="checkbox" name="sub_code" value=<%=key%> /></td>
+                        <td><input type="checkbox" name="sub_code" required value=<%=key%> /></td>
 
                     </tr>
                     <%
@@ -334,7 +334,12 @@
                     %>                                   
 
                     <%	} else {
-                            //response.sendRedirect("index.jsp");
+                             out.println(" ..");
+        out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'Already Registered ! ',})"
+                    + ".then(function(){window.location ='index.jsp' ;});"
+                    + "</script>");
+                            
                         }
                         if (count == 1) {
                             fee1 = 690;
@@ -399,7 +404,7 @@
 } else {
           out.println(" ..");
         out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Recored Not Find',title:'Already Registered ',})"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'Record Not Found ',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
 
@@ -410,3 +415,4 @@
 <jsp:include page="footer.html" />
 </body>>
 </html>
+ s
