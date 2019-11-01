@@ -141,7 +141,7 @@
                                                         <option value="" selected disabled>Select Branch</option>
                                                          <option value="Software Engineering">Software Engineering</option>
                                                          <option value="Information Security">Information Security</option>
-                                                         <option value="Design And Thermal">Design And Thermal</option>
+                                                         <option value="Design and Thermal">Design And Thermal</option>
                                                          <option value="Digital Communication">Digital Communication</option>
                                                          <option value="Industrial Engineering And Management">Industrial Engineering And Management</option>
                                                          <option value="Digital Instrumentation">Digital Instrumentation</option>
@@ -149,11 +149,11 @@
 						<select  name="branch" class="branch_BE branch form-control" style="display:none">
                                                     <option value="" selected disabled>Select Branch</option>
                                                     <option value="Computer Engineering">Computer Engineering</option>
-                                                    <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
+                                                    <option value="Electronics and Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
                                                     <option value="Information Technology">Information Technology</option>
                                                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                                                     <option value="Civil Engineering">Civil Engineering</option>
-                                                    <option value="Electronics & Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
+                                                    <option value="Electronics and Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
                                                 </select>
                                                 <select  name="branch" class="branch_MS branch form-control" style="display:none">
                                                     <option value="" selected disabled>Select Branch</option>

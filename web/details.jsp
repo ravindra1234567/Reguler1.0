@@ -531,7 +531,7 @@
                                     <option value="" selected disabled>Select Branch</option>
                                     <option value="Software Engineering">Software Engineering</option>
                                     <option value="Information Security">Information Security</option>
-                                    <option value="Design And Thermal">Design And Thermal</option>
+                                    <option value="Design and Thermal">Design And Thermal</option>
                                     <option value="Digital Communication">Digital Communication</option>
                                     <option value="Industrial Engineering And Management">Industrial Engineering And Management</option>
                                     <option value="Digital Instrumentation">Digital Instrumentation</option>
@@ -539,11 +539,11 @@
                                 <select  name="branch" class="branch_BE branch form-control" style="display:none">
                                     <option value="" selected disabled>Select Branch</option>
                                     <option value="Computer Engineering">Computer Engineering</option>
-                                    <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
+                                    <option value="Electronics and Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
                                     <option value="Information Technology">Information Technology</option>
                                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                                     <option value="Civil Engineering">Civil Engineering</option>
-                                    <option value="Electronics & Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
+                                    <option value="Electronics and Instrumentation Engineering">Electronics & Instrumentation Engineering</option>
                                 </select>
                                 <select  name="branch" class="branch_MS branch form-control" style="display:none">
                                     <option value="" selected disabled>Select Branch</option>
@@ -586,6 +586,8 @@
             <button class="accordion" style="top:830px;position: absolute;"  id="bt7"><a  href="clerk_ex1.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Clerk Verification</a></button>
             <button class="accordion" style="top:880px;position: absolute;"  id="bt7"> <a href="ex_show_permission.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Show Special Permission Ex-Student </a></button>
             <button class="accordion" style="top:930px;position: absolute;"  id="bt7"> <a href="download_reg_csv.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Download Regular(All CSV files) </a></button>
+            <button class="accordion" style="top:980px;position: absolute;"  id="bt7"><a  href="check_ex_subject_credit.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Check Ex-Subjects Credits</a></button>
+             <button class="accordion" style="top:1030px;position: absolute;color:white" id="bt6"><a href="add_subject_ex.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Add New Ex-Subject </a></button>
         </div>
 
         <script>
@@ -637,7 +639,7 @@
                 }
             });
         </script>
-        <div style="position: relative;top:870px;">
+        <div style="position: relative;top:970px;">
             <jsp:include page="footer.html" />
         </div>
     </body>

@@ -525,8 +525,8 @@
 
         <%                  }
             } catch (Exception e) {
-               out.println(" <script>alert('hi');</script>");
-        out.println("<script>"
+               response.sendRedirect("index.jsp");
+                    out.println("<script>"
                     + "Swal.fire({type: 'error',title:'Record Not Found',title:'Record Not Found ',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");

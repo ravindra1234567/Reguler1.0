@@ -35,6 +35,8 @@
         int sem_num;
         String sub_type, sub_type1;
         int fee1 = 0;
+        PreparedStatement ps2;
+        ResultSet rs2 ;
         Connection con;
     %>
     <%
@@ -54,26 +56,26 @@
             ServletContext context = getServletContext();
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(context.getInitParameter("Url"), context.getInitParameter("UserName"), context.getInitParameter("Password"));
-             } catch (Exception e) {
+        } catch (Exception e) {
 
-         out.println(" ..");
-        out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'There was Some Problem',})"
+            out.println(" ..");
+            out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Error',text:'There was Some Problem',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
-    }
+        }
 
-            PreparedStatement ps = con.prepareStatement("select * from ex_student where enrollment_no=? and sem=?");
-            ps.setString(1, eno);
-            ps.setString(2, sem1);
+        PreparedStatement ps = con.prepareStatement("select * from ex_student where enrollment_no=? and sem=?");
+        ps.setString(1, eno);
+        ps.setString(2, sem1);
 
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
 
-                branch = rs.getString("branch");
-                rollno = rs.getString("roll_no");
-                name = rs.getString(3);
-                s.setAttribute("name", name);
+            branch = rs.getString("branch");
+            rollno = rs.getString("roll_no");
+            name = rs.getString(3);
+            s.setAttribute("name", name);
 
 
     %>
@@ -92,12 +94,12 @@
             padding: 2%;
             border-style: groove;
         }
-        
+
     </style>
 </head>
 <body>
     <jsp:include page="student_header.jsp" />
-     <a href="#"><button class="btn btn-primary" style="margin-left:10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
+    <a href="#"><button class="btn btn-primary" style="margin-left:10px;" onclick=" window.history.back();"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Go Back</button></a>
     <div class="container mx-auto">
         <br> <br> 
         <div id="d1">
@@ -291,13 +293,16 @@
                     <%
                         sem1 = sem1.substring(0, 1);
                         sem_num = Integer.parseInt(sem1);
-//                        try{
-                        PreparedStatement ps2 = con.prepareStatement("select distinct * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code  where ex_student.enrollment_no=? and subschema.branch=? and ex_student.reg='N' and subschema.sem=? ");
+                        try{
+                         ps2 = con.prepareStatement("select distinct * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code  where ex_student.enrollment_no=? and subschema.branch=? and ex_student.reg='N' and subschema.sem=? ");
                         ps2.setString(1, eno);
                         ps2.setString(2, branch);
                         ps2.setInt(3, sem_num);
-                        ResultSet rs2 = ps2.executeQuery();
+                        rs2 = ps2.executeQuery();
                         count = 0;
+                         }catch(Exception r){
+            out.println("Ravindra");
+        }
                         if (rs2.next()) {
                             branch = rs2.getString("branch");
                             course = rs2.getString("course");
@@ -334,12 +339,12 @@
                     %>                                   
 
                     <%	} else {
-                             out.println(" ..");
-        out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'Already Registered ! ',})"
-                    + ".then(function(){window.location ='index.jsp' ;});"
-                    + "</script>");
-                            
+                            out.println(" ..");
+                            out.println("<script>"
+                                    + "Swal.fire({type: 'error',title:'Already Registered !',text:'It seems you have already registered please print your form ',})"
+                                    + ".then(function(){window.location ='print_slip_ex.jsp?enrollmentno="+eno+"&status="+status1+"&sem="+sem1+"';});"
+                                    + "</script>");
+
                         }
                         if (count == 1) {
                             fee1 = 690;
@@ -368,51 +373,52 @@
                         I hereby declare that the information filled by me is true and complete as per my knowledge. If any information provided by me is found false or incorrect then i shall be disqualified by the university.
                     </span>
                 </div>
-            <center>
-                <input type="submit" style="margin-top: 10px" id="pay" class="btn btn-success"  value="GO ->" disabled/>
-            </center><br>
+                <center>
+                    <input type="submit" style="margin-top: 10px" id="pay" class="btn btn-success"  value="GO ->" disabled/>
+                </center><br>
 
-            <input type="hidden" name="fee1" value="<%=fee1%>">  
-            <script>
+                <input type="hidden" name="fee1" value="<%=fee1%>">  
+                <script>
 
-                var checker = document.getElementById('check');
+                    var checker = document.getElementById('check');
 
-                var sendbtn = document.getElementById('pay');
-                // when unchecked or checked, run the function
+                    var sendbtn = document.getElementById('pay');
+                    // when unchecked or checked, run the function
 
-                checker.onchange = function () {
+                    checker.onchange = function () {
 
-                if (this.checked)
-                {
-                    sendbtn.disabled = false;
+                        if (this.checked)
+                        {
+                            sendbtn.disabled = false;
 
-                }
-                else
-                {
-                    sendbtn.disabled = true;
-                }
+                        }
+                        else
+                        {
+                            sendbtn.disabled = true;
+                        }
 
 
 
-            }
-            </script> 
-        </form>
+                    }
+                </script> 
+            </form>
         </div>
-</div>
+    </div>
 
-<%
-} else {
-          out.println(" ..");
-        out.println("<script>"
-                    + "Swal.fire({type: 'error',title:'Record Not Found',title:'Record Not Found ',})"
+    <%
+       
+        } else {
+            out.println(" ..");
+            out.println("<script>"
+                    + "Swal.fire({type: 'error',title:'Record Not Found',text:'Record Not Found ',})"
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
 
         }
 
-   
-%>
-<jsp:include page="footer.html" />
+
+    %>
+    <jsp:include page="footer.html" />
 </body>>
 </html>
- s
+s
