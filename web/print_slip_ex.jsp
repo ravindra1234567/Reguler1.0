@@ -481,8 +481,9 @@
                 <tr>
                     <%   // For subSchema
 
-                        PreparedStatement ps11 = con.prepareStatement("select distinct * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.enrollment_no=?  and reg='Y'");
+                        PreparedStatement ps11 = con.prepareStatement("select distinct * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.enrollment_no=? and subschema.sem=?  and reg='Y'");
                         ps11.setString(1, enrollment_no);
+                        ps11.setInt(2, sem1);
                         ResultSet rs11 = ps11.executeQuery();
 
                         if (rs11.next()) {    // branch=rs2.getString(2);

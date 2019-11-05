@@ -15,85 +15,7 @@
         <jsp:include page="bootstrap_file.jsp" /> 
     
     <script>
-        var e = 0;
-        var prev = 0;
-
-        var myMap = new Map();
-
-        function cal(i)
-        {
-            var x = myMap.has(i);
-            if (!x)
-            {
-                myMap.set(i, 0);
-                prev = 0;
-                //alert("not already set for this rollno");
-            }
-            else
-            {
-                //alert("already set for this rollno");
-                prev = myMap.get(i);
-                //prev=x;
-            }
-            //alert("hello");
-            //var x=document.getElementById("15C30011").value;
-            //alert(x);//+100);
-            //alert(i);
-            //alert("initially prev is:"+prev);
-            var x1 = document.getElementById(i).value;
-            //alert(x1);
-
-            if (isNaN(x1))
-            {
-                if (prev <= 0)
-                    e++;
-                document.getElementById(i).style.color = "red";
-                myMap.set(i, 1);
-
-            }
-            else
-            {
-                if (x1 < 0 || x1 > 4)
-                {
-                    document.getElementById(i).style.color = "red";
-                    if (prev <= 0)
-                        e++;
-                    myMap.set(i, 1);
-                    //prev=1;
-                }
-                else
-                {
-                    //valid
-                    if (prev > 0)
-                        e--;
-                    myMap.set(i, 0);
-                    //prev=0;
-                    document.getElementById(i).style.color = "black";
-                }
-            }
-        }
-        function check()
-        {
-            if (e > 0)
-            {
-               // alert("Please correct the entries marked in red!");
-               swal("Please correct the entries marked in red!", "You clicked the button!", "error");
-                return false;
-            }
-            else {
-                //alert("Save Successfull!");
-             Swal.fire({
-                 type:'success',
-                 title:"Updated",
-                 text:"Subject updated successfully",
-                 showConfirmButton: true
-                }).then((result)=>{
-                      return true; 
-                });
-             
-            }
-        }
-       
+     
     </script>
     </head>
     <body>
@@ -113,7 +35,7 @@
             PreparedStatement ps = con.prepareStatement(qr);
              //String qr="select year,department_name,section,specialization,course_code,class_table.id from class_table,department_table,course_table where class_table.department_id=department_table.id and course_table.id=department_table.course_id";
 
-            ArrayList<String> sclist = new ArrayList<String>();
+//            ArrayList<String> sclist = new ArrayList<String>();
             //PreparedStatement ps=con.prepareStatement(qr);
             ResultSet rs = ps.executeQuery();
             int sno = 0;
@@ -146,6 +68,7 @@
                                             <th>Subject Name</th>
                                             <th>Theory Credits</th>
                                             <th>Practical Credits</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTable">
@@ -157,10 +80,13 @@
                                                 String subject_name = rs.getString(5);
                                                 String theory = rs.getString(6);
                                                 String practical = rs.getString(7);
+                                                String id1 = rs.getString("id");
 //                                                sclist.add(s1);
                                             //String stat=(String)session.getAttribute(class_id);
 %>
                                         <tr>
+                                            
+                                            <td class="id1" id1="<%=id1%>" hidden><%=id1%></td>
                                             <td><%=++sno%></td>
                                             <td><%=course%></td>
                                             <td><%=branch%></td>
@@ -169,9 +95,10 @@
                                             <td><%=subject_name %></td>
                                             <td><%= theory %></td>
                                             <td><%= practical %></td>
+                                            <td><button type="button"  class="btn_del btn btn-danger" /><i class="fas fa-trash fa-lg"></i></button></td>
                                         </tr>
                                         <% }
-                                            session.setAttribute("subject_code_list", sclist);
+                                           
 //            }
                                         %>
 
@@ -194,14 +121,15 @@
                 });
             });
             
-         $(document).on('click',".btn_del", function() {
-             var value = $(this).parent().parent().children('.sub_code').attr('sub_code');
+            
+            $(document).on('click',".btn_del", function() {
+             var value = $(this).parent().parent().children('.id1').attr('id1');
              console.log(value);
 //             window.location.href = "delete_subject.jsp?sub="+value;
              $.ajax({
                  type:'POST',
-                 url:"delete_subject.jsp",
-                 data:{sub: value},
+                 url:"delete_ex_subject.jsp",
+                 data:{id1: value},
                  cache:false,
                  success:function(result){
                      Swal.fire({
@@ -217,6 +145,7 @@
                  
              });
          });
+        
         </script>
         <jsp:include page="footer.html" />
     </body>
