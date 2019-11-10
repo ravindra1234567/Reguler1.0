@@ -68,7 +68,7 @@
     status = (String) ss.getAttribute("s");
     sem = (String) ss.getAttribute("sem");
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy hh:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss a");
     Date date = new Date();
     dt = sdf.format(date);
     sem1 = Integer.parseInt(sem);

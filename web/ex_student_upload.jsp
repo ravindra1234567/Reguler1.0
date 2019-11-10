@@ -40,6 +40,7 @@ int k;
 int l;
 String query4;
 File f;
+char semester;
 %>
 
 
@@ -103,6 +104,8 @@ if( fname.length()<4 || !(fname.substring(fname.length()-4)).equalsIgnoreCase(".
                                 String branch="";
                                 String roll_no=rs.getString("roll_no");
                                 char branch1=roll_no.charAt(2);
+                                semester =roll_no.charAt(3);
+//                                out.println("sem = "+ semester);
                                 
                                 if(branch1=='C')
                                 {
@@ -131,12 +134,14 @@ if( fname.length()<4 || !(fname.substring(fname.length()-4)).equalsIgnoreCase(".
                                  
                                 }
                                 
-                                  PreparedStatement ps2=con.prepareStatement("update ex_student set branch=?  where roll_no=? ");
+                                  PreparedStatement ps2=con.prepareStatement("update ex_student set branch=? , sem='"+semester+"' where roll_no=? ");
                                   ps2.setString(1,branch);
+                                 // ps2.setInt(2,semester);
                                   ps2.setString(2,roll_no);
                                     
                                 int i=0;
                                 i=ps2.executeUpdate();
+                                
                                   
                                 
                                 
