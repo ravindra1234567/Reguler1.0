@@ -74,9 +74,9 @@
                 ResultSet rs2 = pd2.executeQuery();
 
                 while (rs2.next()) {
-                    fw.append(rs2.getString("enrollment_no").toUpperCase());
-                    fw.append(',');
                     fw.append(rs2.getString("roll_no").toUpperCase());
+                    fw.append(',');
+                    fw.append(rs2.getString("enrollment_no").toUpperCase());
                     fw.append(',');
                     fw.append(rs2.getString("name").toUpperCase());
                     fw.append('\n');
