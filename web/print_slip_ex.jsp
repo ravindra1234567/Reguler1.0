@@ -63,6 +63,10 @@
 
 
 <%
+    //get session 
+    
+    HttpSession ss = request.getSession();
+    
     enrollment_no = request.getParameter("enrollmentno");
     status = (String) request.getParameter("status");
     sem = (String) request.getParameter("sem");
@@ -193,7 +197,7 @@
                         Registration for Examination
                     </td>
                     <td >
-                        <span>Nov-2019</span>
+                        <span><%= (String) ss.getAttribute("exam_session")%></span>
                     </td>
                     <td >
                         Examination Centre(Code)
@@ -433,7 +437,7 @@
 
                 <tr>
                     <th>Exam Name:</th>
-                    <td>Nov 2019</td>
+                    <td><%= (String) ss.getAttribute("exam_session")%></td>
                 </tr>
 
                 <tr>
@@ -442,7 +446,7 @@
                 </tr>
                 <tr>
                     <th>Exam Month:</th>
-                    <td>Nov 2019</td>
+                    <td><%= (String) ss.getAttribute("exam_session")%></td>
                 </tr>
                 <tr>
                     <th>Name:</th>

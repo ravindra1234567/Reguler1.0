@@ -196,7 +196,7 @@
                         Registration for Examination
                     </td>
                     <td >
-                        <span>Nov-2019</span>
+                        <span><%= (String) ss.getAttribute("exam_session") %></span>
                     </td>
                     <td >
                         Examination Centre(Code)
@@ -220,11 +220,11 @@
                     <td >
                         <div><%= branch%></div>
                     </td>
-                    <td >
-                        Semester
+                    <td style="font-size:30px;">
+                        Sem
                     </td>
                     <td >
-                        <span><%= sem%></span>
+                        <span style="font-size:30px;"><%= sem%></span>
                     </td>
 
                 </tr>
@@ -263,7 +263,7 @@
                         Status
                     </td>
                     <td >
-                        <span><%= status%></span>
+                        <span style="font-size:30px;"><%= status%></span>
                     </td>
 
                     <td >
@@ -436,7 +436,7 @@
 
                 <tr>
                     <th>Exam Name:</th>
-                    <td>Nov 2019</td>
+                    <td><%= (String) ss.getAttribute("exam_session") %></td>
                 </tr>
 
                 <tr>
@@ -445,7 +445,7 @@
                 </tr>
                 <tr>
                     <th>Exam Month:</th>
-                    <td>Nov 2019</td>
+                    <td><%= (String) ss.getAttribute("exam_session") %></td>
                 </tr>
                 <tr>
                     <th>Name:</th>
@@ -458,11 +458,11 @@
 
                 <tr><th>Semester
                     </th>
-                    <td colspan="2"><%= sem  %> </td>
+                    <td colspan="2" style="font-size:30px;"><%= sem  %> </td>
                 </tr>
                 <tr>
                     <th>Status:</th>
-                    <td colspan="2">Ex</td>
+                    <td colspan="2" style="font-size:30px;">Ex</td>
                 </tr>
             </table>
             

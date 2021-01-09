@@ -17,10 +17,10 @@
             String eno;
             String status;
             String query2;
-            String ss;
+            String  ss;
         %>
         <%
-            ss = request.getParameter("session1");
+            ss = "";
 //            out.println(ss);
             HttpSession session1 = request.getSession();
             eno = (String) session1.getAttribute("e");

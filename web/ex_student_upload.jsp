@@ -65,8 +65,7 @@ char semester;
     { 
     String fname=item.getName();
   //out.println("2");  
-if( fname.length()<4 || !(fname.substring(fname.length()-4)).equalsIgnoreCase(".csv"))
-        {
+if( fname.length()<4 || !(fname.substring(fname.length()-4)).equalsIgnoreCase(".csv")){
 
              throw new Exception("Unsupported File Type");
        

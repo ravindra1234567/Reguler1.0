@@ -116,6 +116,7 @@
                 else
                     document.getElementById("form1").action = "reg_not_reg_ex.jsp";
             }
+            
 
         </script>
     </head>
@@ -333,70 +334,17 @@
                 </div>
                 <!-- Add New Subject -->
                 <button class="accordion" style="top:430px;position: absolute;color:white" id="bt6"><a href="add_subject_reg.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Add New Subject </a></button>
-                <button class="accordion" style="top:480px;position: absolute;"  id="bt7">Registered Student</button>
-                <!--<button class="accordion" style="position:absolute;" id="bt1">Student List ( For Deletion )</button>-->
-                <div class="panel" style="position: absolute;">
-                    <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                        <form class="sign-up" action="eligible_student.jsp" >
-                            <div class="row">
-                                <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-
-                                    Registered Student
-                                </div>
-                            </div>
-                            <jsp:include page="search_form.jsp" /> 
-                            <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-
-                                <button type="submit" class="btn btn-success btn-block sign-up" onclick="delete_student();" >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
-
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <button class="accordion" style="top:530px;position: absolute;"  id="bt8">Not Registered Student</button>
-                <div class="panel" style="position: absolute;">
-                    <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                        <form class="sign-up" action="not_eligible_student.jsp" method="post" >
-                            <div class="row">
-                                <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-
-                                    Not Registered Student
-                                </div>
-                            </div>
-                            <jsp:include page="search_form.jsp" /> 
-                            <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-
-                                <button type="submit" class="btn btn-success btn-block sign-up" onclick="delete_student();" >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
-
-                            </div>
-                        </form>
-
-                    </div>
-
-
-                </div>
-
-
-                <button class="accordion" style="position:absolute;top:580px;"  id="bt11">Check Subject Schema </button>
-                <div class="panel" style="position: absolute;">
-                    <div class="font-weight-bold col-lg-12  shadow-lg sign-up" >
-                        <form class="sign-up" action="checkSchema.jsp" method="get" >
-                            <div class="row">
-                                <div class="col-lg-12 p-3 h2 font-weight-light bg-success text-light text-center">
-
-                                    Check Subject Schema
-                                </div>
-                            </div>
-                            <jsp:include page="search_form.jsp" /> 
-                            <div class="col-lg-12 pl-4 pr-4 mt-2 mb-2" align="center">
-
-                                <button type="submit" class="btn btn-success btn-block sign-up" onclick="delete_student();" >GO &nbsp; <i class='fas fas fa-arrow-right '></i></button>
-
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
+               
+                
+                <!--Registered student-->
+                <button class="accordion" style="top:480px;position: absolute;"  id="bt7"><a  href="registered_student.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Registered Student</a></button>
+                
+                <!-- Not Registered student-->
+                <button class="accordion" style="top:530px;position: absolute;"  id="bt8"><a  href="not_registered_student.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Not Registered Student</a></button>
+                  
+                <!--Registered and paid student-->
+                <button class="accordion" style="position:absolute;top:580px;"  id="bt11"><a  href="registered_and_paid_student.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Registered & Paid Student</a> </button>
+               
                 <button class="accordion" style="top:630px;position: absolute;"  id="bt7"><a href="ex_student_fee.jsp" style="color: white;font-size: 17px;font-family: sans-serif;">Update Ex-student Subject Fees</a></button>
 
 
@@ -571,9 +519,9 @@
                                 <label for="reg"><small>Registered/Not-Registered<sup class="text-danger">*</sup></small></label>
                                 <select id="reg" name="reg" class="form-control">
                                     <option value="" selected disabled>Select Status</option>
-                                    <option value="Paid">Registered</option>
-                                    <option value="Unpaid">Not Registered</option>
-                                    <option value="Both">Both</option>
+                                    <option value="Y">Registered</option>
+                                    <option value="N">Not Registered</option>
+                                    <option value="Both"> Registered & Paid</option>
                                 </select>
                             </div>         
                         </div>

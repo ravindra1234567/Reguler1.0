@@ -110,8 +110,11 @@
                <input class="form-control" id="myInput" type="text" placeholder="Search............"> <br>
                 <table class="table table-bordered ">
                     <thead>
-                        <tr><th colspan="11" style="background-color: #B0C4DE;text-align: center;margin-top:5px;font-size:24px;padding: 2px;"><center>Ex-Student Details</center></th></tr>
+                        <tr><th colspan="12" style="background-color: #B0C4DE;text-align: center;margin-top:5px;font-size:24px;padding: 2px;"><center>Ex-Student Details</center></th></tr>
                     <tr>
+                        <th>
+                            <span>S.no</span>
+                        </th>
                         <th>
                             <span>Course</span>
                         </th>
@@ -153,7 +156,10 @@
                         </th>
                     </tr>
                     </thead>
-                    <%    while (rs2.next()) {
+                    
+                    <%   
+                            int i=1;  
+                            while (rs2.next()) {
                             course = rs2.getString("course");
                             branch = rs2.getString("branch");
                             status = rs2.getString("payment_status");
@@ -169,6 +175,9 @@
                     %>
                     <tbody id="myTable">
                         <tr>
+                            <td>
+                                <span><%= i++ %></span>
+                            </td>
                             <td>
                                 <span><%= course%></span>
                             </td>

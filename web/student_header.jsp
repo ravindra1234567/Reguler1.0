@@ -18,9 +18,9 @@ and open the template in the editor.
         <div class="navbar-nav">
             <a class="nav-item nav-link active text-white " href="index.jsp">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link text-white" href="admin.jsp">Admin</a>
-            <a class="nav-item nav-link text-white" href="print_form_ex.jsp">print</a>
-            <a class="nav-item nav-link text-white" href="check_ex_subject_credit.jsp">subject</a>
-            <a class="nav-item nav-link text-white" href="add_subject_ex.jsp">Add subject</a>
+            <!--<a class="nav-item nav-link text-white" href="print_form_ex.jsp">print</a>-->
+            <!--<a class="nav-item nav-link text-white" href="check_ex_subject_credit.jsp">subject</a>-->
+            <!--<a class="nav-item nav-link text-white" href="add_subject_ex.jsp">Add subject</a>-->
             <a class="nav-item nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true"></a>
         </div>
     </div>

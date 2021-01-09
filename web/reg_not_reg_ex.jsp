@@ -28,9 +28,9 @@
         String course;
         ResultSet rs2;
         String reg;
-         String sub_type;
-           String sub_code;
-             String sub_name;
+        String sub_type;
+        String sub_code;
+        String sub_name,register;
         
         
        
@@ -41,7 +41,7 @@
             Connection con=DriverManager.getConnection(context.getInitParameter("Url"),context.getInitParameter("UserName"),context.getInitParameter("Password"));
 		
             
-          session1=request.getSession();
+     session1=request.getSession();
         
     uname=(String)session1.getAttribute("uname");
     
@@ -76,21 +76,28 @@
       
        
       //  out.println(1);
-       query= "select distinct  * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.branch=? and ex_student.sem=? and  payment_status=? order by name, ex_student.sem,subject_name";
-                        
-                 if(reg_status.equals("Paid") || reg_status.equals("Unpaid"))
-                    {   
+       query= "select distinct  * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.branch=? and ex_student.sem=? and  payment_status=? and reg = ?  order by name, ex_student.sem,subject_name";
+                      //reg_status.equals("Paid") ||  
+                 if(reg_status.equals("N")){   
                          pd=con.prepareStatement(query);
-                         pd.setString(3,reg_status);
+                         pd.setString(3,"Unpaid");
+                         pd.setString(4,"N");
                    }
-                  else if(reg_status.equals("Both"))
-                        {  // out.println(1);
-                            query1="select distinct  * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.branch=? and ex_student.sem=? order by name, ex_student.sem,subject_name";
-                            pd=con.prepareStatement(query1);
+                 else if(reg_status.equals("Y")){   
+                         pd=con.prepareStatement(query);
+                         pd.setString(3,"Unpaid");
+                         pd.setString(4,"Y");
+                   }
+                  else if(reg_status.equals("Both")){
+//                            query1="select distinct  * from subschema inner join ex_student on subschema.subject_code=ex_student.subject_code and ex_student.branch=subschema.branch where ex_student.branch=? and ex_student.sem=? and payment_status=? and reg = ? order by name, ex_student.sem,subject_name";
+                            pd=con.prepareStatement(query);
+                            pd.setString(3,"Paid");
+                             pd.setString(4,"Y");
                          }
                            pd.setString(1,branch);
                            pd.setString(2,sem);
-                            //out.println(1); 
+//                           
+                             
                            rs2=pd.executeQuery();
                             // out.println(2);
            
@@ -103,6 +110,9 @@
                     <table class="table table-bordered">
                         <thead>
                      <tr>
+                         <th>
+                             <span>S.No</span>
+                         </th>
                          <th>
                              <span>Course</span>
                          </th>
@@ -139,11 +149,16 @@
                          <th>
                              Payment Status
                         </th>
+                        <th>
+                            Status
+                        </th>
                      </tr>
                         </thead>
                         
  
-             <%    while(rs2.next())
+             <%   
+                            int i=1;
+                            while(rs2.next())
                              {
                             course=rs2.getString("course");
                            branch=rs2.getString("branch");
@@ -155,7 +170,12 @@
                           sub_type=rs2.getString("subject_type");
                           sub_name=rs2.getString("subject_name");
                           sub_code=rs2.getString("subject_code");
-                           
+                          register = rs2.getString("reg");
+                          
+                         if(register.equals("Y"))
+                              register = "Registered";
+                         else
+                           register = "Not Registered"; 
                           
                          
                               
@@ -163,6 +183,9 @@
                 %>
                 <tbody id="myTable">
 		<tr>
+                        <td>
+                             <span><%= i++ %></span>
+                         </td>
                          <td>
                              <span><%= course %></span>
                          </td>
@@ -198,6 +221,9 @@
 
                          <td>
                              <span><%= status %></span>
+                        </td>
+                        <td>
+                             <span><%= register %></span>
                         </td>
         
                 

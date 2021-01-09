@@ -4,7 +4,7 @@
         <description>Location to store uploaded file</description>
         <param-name>image</param-name>
         <param-value>
-      F:\\Reguler\\web\\image\\
+      D:\\Reguler1.0\\web\\image\\
       </param-value>
     </context-param>
     <context-param>
@@ -85,20 +85,20 @@
     </servlet-mapping>
     <context-param>
         <param-name>Input_Path</param-name>
-        <param-value>F:\\Reguler\\web\\input\\</param-value>
+        <param-value>D:\\Reguler1.0\\web\\input\\</param-value>
     </context-param>
     <context-param>
         <param-name>Input_Path_Ex</param-name>
-        <param-value>F:\\Reguler\\web\\ex-input-data\\</param-value>
+        <param-value>D:\Reguler1.0\web\ex-input-data\\</param-value>
     </context-param>
     <context-param>
         <param-name>Output_Path</param-name>
-        <param-value>F:\\Reguler\\web\\output\\</param-value>
+        <param-value>D:\\Reguler1.0\\web\\output\\</param-value>
     </context-param>
     
     <context-param>
         <param-name>Reg_Output_Path</param-name>
-        <param-value>F:\\Reguler\\web\\Regular_output\\</param-value>
+        <param-value>D:\\Reguler1.0\\web\\Regular_output\\</param-value>
     </context-param>
     
     <servlet-mapping>

@@ -30,7 +30,7 @@
         String key;
         String category;
         String course;
-        String house_no, colony;
+        String house_no, colony , exam_seesion;
         int count;
         int sem_num;
         String sub_type, sub_type1;
@@ -44,13 +44,18 @@
         eno = (request.getParameter("enrollmentno")).toUpperCase();
         status1 = request.getParameter("status");
         sem1 = request.getParameter("sem");
+       
 //        out.println("Enrollment No. = " + eno);
 //        out.println("Status = "+status1);
-//        out.println("Sem = " + sem1);
-        HttpSession s = request.getSession();
+//        out.println("Sem = " + sem1
+        
+        
+//        set seesion values
+         HttpSession s = request.getSession();
         s.setAttribute("e", eno);
         s.setAttribute("s", status1);
         s.setAttribute("sem", sem1);
+        
         try {
 
             ServletContext context = getServletContext();
@@ -64,6 +69,15 @@
                     + ".then(function(){window.location ='index.jsp' ;});"
                     + "</script>");
         }
+        PreparedStatement ps1 = con.prepareStatement("select * from session_table");
+         ResultSet rs1 = ps1.executeQuery();
+        if(rs1.next()) {
+            //  set Session value exam_session
+            exam_seesion = rs1.getString(2);
+            s.setAttribute("exam_session",exam_seesion); 
+        }
+      
+        
 
         PreparedStatement ps = con.prepareStatement("select * from ex_student where enrollment_no=? and sem=?");
         ps.setString(1, eno);
@@ -133,10 +147,10 @@
                     <tr>
 
                         <th>
-                            Registration for Examination
+                            Exam Month(Session)
                         </th>
                         <td>
-                            <span><input type="text" value="Nov-Dec 2019" name="session1" hidden>Nov-Dec 2019</span>
+                            <span><input type="text" value="Nov-Dec 2019" name="session1" hidden><%= exam_seesion %></span>
                         </td>
                         <th>
                             Examination Centre(Code)

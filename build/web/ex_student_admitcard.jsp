@@ -147,7 +147,7 @@
 
                         <tr>
                             <th>Exam Name:</th>
-                            <td>Nov 2019</td>
+                            <td><%= (String) session1.getAttribute("exam_session")%></td>
                         </tr>
 
                         <tr>
