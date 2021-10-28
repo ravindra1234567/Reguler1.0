@@ -57,7 +57,9 @@
 
                 String name = rs1.getString("subject_code");
                 String type = rs1.getString("subject_type");
-                filename = context.getInitParameter("Output_Path") + name + "_" + type + ".csv";
+//               String = (String)System.getProperty("user.home")+"/Dowmloads/";
+//                filename = context.getInitParameter("Output_Path") + name + "_" + type + ".csv";
+                filename = System.getProperty("user.home")+"/Downloads/" + name + "_" + type + ".csv";
                 FileWriter fw = new FileWriter(filename);
                 fw.append("Roll_no");
                 fw.append(',');

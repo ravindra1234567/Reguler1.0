@@ -93,7 +93,7 @@
     </context-param>
     <context-param>
         <param-name>Output_Path</param-name>
-        <param-value>D:\\Reguler1.0\\web\\output\\</param-value>
+        <param-value>.</param-value>
     </context-param>
     
     <context-param>
